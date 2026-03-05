@@ -58,6 +58,8 @@ const pessoa = { nome: 'Junin', idade: 22, cidade: 'Porto Alegre' };
 // b) Adicione uma nova propriedade 'curso' com valor 'Programação' por atribuição direta.
 
 // → Seu código aqui:
+console.log (pessoa[0])
+
 
 
 console.log("_______________________________");
