@@ -58,7 +58,10 @@ const pessoa = { nome: 'Junin', idade: 22, cidade: 'Porto Alegre' };
 // b) Adicione uma nova propriedade 'curso' com valor 'Programação' por atribuição direta.
 
 // → Seu código aqui:
-console.log (pessoa[0])
+console.log(pessoa.nome,pessoa.cidade)
+pessoa.curso="Programação"
+console.log(pessoa)
+
 
 
 
@@ -68,7 +71,7 @@ console.log("_______________________________");
 // ------------------------------------------------------------
 // EXERCÍCIO 5 – Objetos aninhados e arrays dentro de objetos
 // ------------------------------------------------------------
-const perfil = {
+const perfild = {
   usuario: 'ana123',
   dados: { nome: 'Ana', idade: 19 },
   interesses: ['música', 'fotografia', 'viagens']
@@ -77,7 +80,9 @@ const perfil = {
 // b) Altere o primeiro interesse para 'arte' por atribuição direta.
 
 // → Seu código aqui:
-
+console.log(perfild.dados.nome,perfild.interesses[1])
+perfild.interesses[0]="arte"
+console.log (perfild.interesses)
 
 console.log("_______________________________");
 
@@ -90,7 +95,32 @@ console.log("_______________________________");
 // e os valores são os objetos de produto correspondentes (sem usar loops ou funções).
 
 // → Seu código aqui:
+  let produtos = [{
+    id: 1234,
+    nome: "celular",
+    preço: 4500.00
+  },
+  {
+    id: 456,
+    nome: "carregador",
+    preço: 100.00
+  },
+  {
+  id: 789,
+  nome: "fone",
+  preço: 350.00
+  }]
 
+  let catalogo = { 
+   1234: produtos[0],
+   456: produtos[1],
+   789: produtos[2]
+  }
+  console.log (
+     catalogo[456],
+     catalogo[1234],
+     catalogo[789])
+  
 
 console.log("_______________________________");
 
@@ -103,6 +133,29 @@ console.log("_______________________________");
 // b) Crie um novo array contendo apenas as tarefas que não estão concluídas
 
 // → Seu código aqui:
+let tarefas= [{
+  id:1,
+  titulo: "verificar",
+  concluida: false
+},
+{
+  id:2,
+  titulo: "fazer",
+  concluida: false
+},
+{ 
+  id:3,
+  titulo: "planilha",
+  concluida: false
+}]
+tarefas[1].concluida = true
 
+let naoConcluidas=[
+  tarefas[0],
+  tarefas[2]
+]
+
+
+console.log(naoConcluidas)
 
 console.log("_______________________________");
