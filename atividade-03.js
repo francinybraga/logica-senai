@@ -24,13 +24,13 @@
 // → Seu código aqui:
 let lerTeclado = require('readline-sync')
 
-console.log("iniciando o programa...")
-console.info("informo que a atividade é sobre input e output")
-console.warn("aviso: você precisa iniciar o programa com node e o nome do arquivo")
-console.error("faça novamente, ocorreu um erro")
+// console.log("iniciando o programa...")
+// console.info("informo que a atividade é sobre input e output")
+// console.warn("aviso: você precisa iniciar o programa com node e o nome do arquivo")
+// console.error("faça novamente, ocorreu um erro")
 
 
-console.log("_______________________________");
+// console.log("_______________________________");
 
 
 // ------------------------------------------------------------
@@ -158,38 +158,38 @@ console.log("_______________________________");
 // → Seu código aqui:
 
 
-let listaDeUsuário = [
-    {
-        nome: lerTeclado.question("Digite seu nome:"),
-        idade: lerTeclado.question("Digite sua idade:"),
-        endereço: endereço = {
-            cidade: lerTeclado.question("Digite sua cidade:"),
-            rua: lerTeclado.question("Digite sua rua:"),
-            numero: lerTeclado.question("Digite o numero da sua casa:")
-        }
-    },
-    {
-        nome1: lerTeclado.question("Digite seu nome:"),
-        idade1: lerTeclado.question("Digite sua idade:"),
-        endereço1: endereço = {
-            cidade: lerTeclado.question("Digite sua cidade:"),
-            rua: lerTeclado.question("Digite sua rua:"),
-            numero: lerTeclado.question("Digite o numero da sua casa:")
-        }
-    },
-    {
-        nome2: lerTeclado.question("Digite seu nome:"),
-        idade2: lerTeclado.question("Digite sua idade:"),
-        endereço2: endereço = {
-            cidade: lerTeclado.question("Digite sua cidade:"),
-            rua: lerTeclado.question("Digite sua rua:"),
-            numero: lerTeclado.question("Digite o numero da sua casa:")
-        }
-    }
-]
-console.table(listaDeUsuário)
-console.log(listaDeUsuário[1].nome1)
-console.log(listaDeUsuário[1].idade1)
+// let listaDeUsuário = [
+//     {
+//         nome: lerTeclado.question("Digite seu nome:"),
+//         idade: lerTeclado.question("Digite sua idade:"),
+//         endereço: endereço = {
+//             cidade: lerTeclado.question("Digite sua cidade:"),
+//             rua: lerTeclado.question("Digite sua rua:"),
+//             numero: lerTeclado.question("Digite o numero da sua casa:")
+//         }
+//     },
+//     {
+//         nome1: lerTeclado.question("Digite seu nome:"),
+//         idade1: lerTeclado.question("Digite sua idade:"),
+//         endereço1: endereço = {
+//             cidade: lerTeclado.question("Digite sua cidade:"),
+//             rua: lerTeclado.question("Digite sua rua:"),
+//             numero: lerTeclado.question("Digite o numero da sua casa:")
+//         }
+//     },
+//     {
+//         nome2: lerTeclado.question("Digite seu nome:"),
+//         idade2: lerTeclado.question("Digite sua idade:"),
+//         endereço2: endereço = {
+//             cidade: lerTeclado.question("Digite sua cidade:"),
+//             rua: lerTeclado.question("Digite sua rua:"),
+//             numero: lerTeclado.question("Digite o numero da sua casa:")
+//         }
+//     }
+// ]
+// console.table(listaDeUsuário)
+// console.log(listaDeUsuário[1].nome1)
+// console.log(listaDeUsuário[1].idade1)
 
 
 
@@ -208,6 +208,29 @@ console.log("_______________________________");
 // g) Exiba o nome e a 3ª nota do 1º aluno.
 
 // → Seu código aqui:
+// let aluno1 = {
+//    nome :lerTeclado.question("Digite seu nome:"),
+//    nota1 :lerTeclado.questionInt("Digite sua nota:"),
+//    nota2 :lerTeclado.questionInt("Digite sua nota:"),
+//    nota3 :lerTeclado.questionInt("Digite sua nota:")
+// }
+// let aluno2 = {
+//    nome :lerTeclado.question("Digite seu nome:"),
+//    nota1 :lerTeclado.questionInt("Digite sua nota:"),
+//    nota2 :lerTeclado.questionInt("Digite sua nota:"),
+//    nota3 :lerTeclado.questionInt("Digite sua nota:")
+// }
+// let aluno3 = {
+//    nome :lerTeclado.question("Digite seu nome:"),
+//    nota1 :lerTeclado.questionInt("Digite sua nota:"),
+//    nota2 :lerTeclado.questionInt("Digite sua nota:"),
+//    nota3 :lerTeclado.questionInt("Digite sua nota:")
+// }
+// let turma = [aluno1, aluno2, aluno3]
+// console.table(turma)
+// console.log(turma[1].nome,turma[1].nota1)
+
+
 
 
 console.log("_______________________________");
@@ -229,7 +252,15 @@ console.log("_______________________________");
 //    "Produto: <nome> | Categoria: <categoria> | Estoque: <quantidade> un".
 
 // → Seu código aqui:
-
+// const produto = {
+//     nome: lerTeclado.question("Digite o nome do produto:"),
+//     categoria: lerTeclado.question("Digite a categoria do produto:"),
+//     preco: lerTeclado.questionInt("Digite o preço:"),
+//     quantidade_em_estoque: lerTeclado.questionInt("Digite a quantidade em estoque:"),
+//     disponivel: lerTeclado.keyInYN("Está disponível para venda? (s/n):")
+// }
+// console.table (produto)
+// console.log(`Produto: ${produto.nome} | Categoria: ${produto.categoria} | Estoque: ${produto.quantidade_em_estoque} un`)
 
 console.log("_______________________________");
 
@@ -245,3 +276,20 @@ console.log("_______________________________");
 // c) Exiba a lista com console.table().
 // d) Exiba somente o nome e preço do 2 medicamento.
 // e) Exiba somente o nome e se está em estoque o 1 medicamento.
+
+let medicamento1 = {
+    nome: lerTeclado.question("Digite o nome do medicamento:"),
+    preco: lerTeclado.questionInt("Digite o preço:"),
+    estoque: lerTeclado.keyInYN("Tem em estoque? (s/n)")
+}
+let medicamento2 = {
+    nome: lerTeclado.question("Digite o nome do medicamento:"),
+    preco: lerTeclado.questionInt("Digite o preço:"),
+    estoque: lerTeclado.keyInYN("Tem em estoque? (s/n)")
+}
+let estoqueFarmacia = []
+estoqueFarmacia.push(medicamento1)
+estoqueFarmacia.push(medicamento2)
+
+console.table(estoqueFarmacia)
+console.log(estoqueFarmacia[1].nome,estoqueFarmacia[1].preco)
