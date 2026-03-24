@@ -211,7 +211,11 @@ console.log("_______________________________");
 //   cidade: lerTeclado.question("Digite sua cidade favorita: ")
 // }]
 // console.table(pessoa[0])
-// let viajante = [pessoa[0],pessoa[1],pessoa[2]]
-// console.table(viajante)
+// let viajantes = [pessoa[0],pessoa[1],pessoa[2]]
+// console.table(viajantes)
+// console.info(viajantes.length)
+// console.log(viajantes[1].cidade)
+// console.log(viajantes[0].nome)
+
 
 console.log("_______________________________");
