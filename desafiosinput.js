@@ -115,46 +115,46 @@ console.log("_______________________________");
 //    "Seu pedido: Entrada: <entrada>, Prato Principal: <pratoPrincipal>, Sobremesa: <sobremesa>, Bebida 1: <bebida1>, Bebida 2: <bebida2>. Bom apetite!"
 
 // → Seu código aqui:
-console.info("Você irá montar um pedido!")
-console.log (
+// console.info("Você irá montar um pedido!")
+// console.log (
     
-  `===============================================================
-                                 MENU
-    ==============================================================
-    ENTRADAS                PRATO PRIN             SOBREMESA
-    SALADA:R$ 50,00       MACARRAO:R$ 50,00     YOGURTE:R$ 50,00
-    FRUTAS:R$ 50,00       CARNE:R$ 50,00        SORVETE:R$ 50,00
-    BLA          AA           BB
-    BLA          AA           BB
-    BLA          AA           BB
+//   `===============================================================
+//                                  MENU
+//     ==============================================================
+//     ENTRADAS                PRATO PRIN             SOBREMESA
+//     SALADA:R$ 50,00       MACARRAO:R$ 50,00     YOGURTE:R$ 50,00
+//     FRUTAS:R$ 50,00       CARNE:R$ 50,00        SORVETE:R$ 50,00
+//     BLA          AA           BB
+//     BLA          AA           BB
+//     BLA          AA           BB
     
-    BEBIDAS
-    COCA:R$ 50,00
-    SUCO:R$ 50,00
-    CAIPIRINHA:R$ 50,00
+//     BEBIDAS
+//     COCA:R$ 50,00
+//     SUCO:R$ 50,00
+//     CAIPIRINHA:R$ 50,00
     
-    ===============================================================
-    APROVEITE O AMBIENTE E DOE PARA O GARÇOM!
-    ===============================================================`);
+//     ===============================================================
+//     APROVEITE O AMBIENTE E DOE PARA O GARÇOM!
+//     ===============================================================`);
 
 
- let entrada = lerTeclado.question("Qual a entrada?")
- let pratoPrincipal= lerTeclado.question("Qual o prato principal?")
- let sobremesa = lerTeclado.question("Qual a sobremesa?")
- let bebida = [
-      bebida1 =  lerTeclado.question("Qual a bebida?"),
-      bebida2 = lerTeclado.question("Qual a bebida?")]
+//  let entrada = lerTeclado.question("Qual a entrada?")
+//  let pratoPrincipal= lerTeclado.question("Qual o prato principal?")
+//  let sobremesa = lerTeclado.question("Qual a sobremesa?")
+//  let bebida = [
+//       bebida1 =  lerTeclado.question("Qual a bebida?"),
+//       bebida2 = lerTeclado.question("Qual a bebida?")]
 
-let pedido = 
-{
-    entrada: entrada,
-    pratoPrincipal: pratoPrincipal,
-    sobremesa: sobremesa,
-    bebida: [bebida1,bebida2]
-}
+// let pedido = 
+// {
+//     entrada: entrada,
+//     pratoPrincipal: pratoPrincipal,
+//     sobremesa: sobremesa,
+//     bebida: [bebida1,bebida2]
+// }
 
-console.table(pedido)
-console.log(`Seu pedido: Entrada: ${pedido.entrada}, Prato Principal: ${pedido.pratoPrincipal}, Sobremesa: ${pedido.sobremesa}, Bebida 1: ${pedido.bebida[0]}, Bebida 2: ${pedido.bebida[1]}. Bom apetite!`)
+// console.table(pedido)
+// console.log(`Seu pedido: Entrada: ${pedido.entrada}, Prato Principal: ${pedido.pratoPrincipal}, Sobremesa: ${pedido.sobremesa}, Bebida 1: ${pedido.bebida[0]}, Bebida 2: ${pedido.bebida[1]}. Bom apetite!`)
   
     
 
@@ -174,6 +174,14 @@ console.log("_______________________________");
 // e) Use console.warn() para exibir: "Lembre-se que jogar não é problema, o problema é colocar o jogo como prioridade."
 
 // → Seu código aqui:
+// let perfil = {
+//   apelido: lerTeclado.question("Digite seu apelido:"),
+//   jogoFavorito: lerTeclado.question("Digite seu jogo favorito:"),
+//   horasTotaisJogadas: lerTeclado.questionInt("Horas aproximadas:"),
+//   jogaEmTime: lerTeclado.keyInYN("Joga em time?(s/n)")
+// }
+// console.table(perfil)
+// console.warn("Lembre-se que jogar não é problema, o problema é colocar o jogo como prioridade.")
 
 
 console.log("_______________________________");
@@ -192,6 +200,18 @@ console.log("_______________________________");
 // h) Exiba com console.log() o nome do 1º viajante.
 
 // → Seu código aqui:
-
+// let pessoa = [{
+//   nome:lerTeclado.question("Digite seu nome: "),
+//   cidade: lerTeclado.question("Digite sua cidade favorita: ")
+// },{
+//   nome:lerTeclado.question("Digite seu nome: "),
+//   cidade: lerTeclado.question("Digite sua cidade favorita: ")
+// },{
+//   nome:lerTeclado.question("Digite seu nome: "),
+//   cidade: lerTeclado.question("Digite sua cidade favorita: ")
+// }]
+// console.table(pessoa[0])
+// let viajante = [pessoa[0],pessoa[1],pessoa[2]]
+// console.table(viajante)
 
 console.log("_______________________________");

@@ -27,14 +27,14 @@ let lerTeclado = require('readline-sync')
 // f) num1 elevado a num2 (potência).
 
 // → Seu código aqui:
-let num1 = 18
-let num2 = 5
-let divisao = num1/num2
-console.log(`Cálculo: ${num1} + ${num2} = ${num1 + num2}`)
-console.log("soma =", num1+num2)
-console.log("subração =", num1-num2)
-console.log("multiplicação =", num1*num2)
-console.log("divisão =", divisao.toFixed(2))
+// let num1 = 18
+// let num2 = 5
+// let divisao = num1/num2
+// console.log(`Cálculo: ${num1} + ${num2} = ${num1 + num2}`)
+// console.log("soma =", num1+num2)
+// console.log("subração =", num1-num2)
+// console.log("multiplicação =", num1*num2)
+// console.log("divisão =", divisao.toFixed(2))
 
 
 
@@ -51,11 +51,11 @@ console.log("_______________________________");
 //    "Retângulo | Largura: <largura> | Altura: <altura> | Área: <area> | Perímetro: <perimetro>"
 
 // → Seu código aqui:
-let largura = 8
-let altura = 5
-let area = largura*altura
-let perimetro = 2 * largura + 2 * altura
-console.log(`Retângulo | Largura: ${largura} | Altura: ${altura} | Área: ${area} | Perímetro: ${perimetro}`)
+// let largura = 8
+// let altura = 5
+// let area = largura*altura
+// let perimetro = 2 * largura + 2 * altura
+// console.log(`Retângulo | Largura: ${largura} | Altura: ${altura} | Área: ${area} | Perímetro: ${perimetro}`)
 
 
 console.log("_______________________________");
@@ -74,11 +74,11 @@ console.log("_______________________________");
 //    Use toFixed(2) nos valores em reais.
 
 // → Seu código aqui:
-let precoOriginal = 250
-let percentualDesconto = 15
-let valorDesconto = precoOriginal * (percentualDesconto/100)
-let precoFinal = precoOriginal - valorDesconto
-console.log(`Preço original: R$ ${precoOriginal} | Desconto: R$ ${valorDesconto} | Preço final: R$ ${precoFinal}`)
+// let precoOriginal = 250
+// let percentualDesconto = 15
+// let valorDesconto = precoOriginal * (percentualDesconto/100)
+// let precoFinal = precoOriginal - valorDesconto
+// console.log(`Preço original: R$ ${precoOriginal} | Desconto: R$ ${valorDesconto} | Preço final: R$ ${precoFinal}`)
 
 
 console.log("_______________________________");
@@ -96,15 +96,15 @@ console.log("_______________________________");
 //    "Pontos após <tipo da operação>: <valor>"
 
 // → Seu código aqui:
-let pontos = 100
-pontos += 50
-console.log(`Pontos após soma: ${pontos += 50}`)
-pontos -= 20
-console.log(`Pontos após subtração: ${pontos -= 50}`)
-pontos*=2
-console.log(`Pontos após multiplicação: ${pontos *= 50}`)
-pontos/=4
-console.log(`Pontos após divisão: ${pontos /= 50}`)
+// let pontos = 100
+// pontos += 50
+// console.log(`Pontos após soma: ${pontos += 50}`)
+// pontos -= 20
+// console.log(`Pontos após subtração: ${pontos -= 50}`)
+// pontos*=2
+// console.log(`Pontos após multiplicação: ${pontos *= 50}`)
+// pontos/=4
+// console.log(`Pontos após divisão: ${pontos /= 50}`)
 
 
 
@@ -124,21 +124,21 @@ console.log("_______________________________");
 // f) Incremente "nivel" três vezes usando ++nivel (prefixo) e exiba cada resultado.
 
 // → Seu código aqui:
-let vida = 3
-console.log(vida)
-vida++
-console.log(vida)
-vida++
-console.log(vida)
-vida--
-console.log(vida)
-let nivel =1
-++nivel
-console.log(nivel)
-++nivel
-console.log(nivel)
-++nivel
-console.log(nivel)
+// let vida = 3
+// console.log(vida)
+// vida++
+// console.log(vida)
+// vida++
+// console.log(vida)
+// vida--
+// console.log(vida)
+// let nivel =1
+// ++nivel
+// console.log(nivel)
+// ++nivel
+// console.log(nivel)
+// ++nivel
+// console.log(nivel)
 
 
 
@@ -158,14 +158,14 @@ console.log("_______________________________");
 // f) Use Math.min() para encontrar o menor entre 42, 17, 89, 5, 63. Exiba o resultado.
 
 // → Seu código aqui:
-let nota = 7.3
-console.log(`Math.round`, Math.round(nota))
-console.log(`Math.floor`,Math.floor(nota))
-console.log(`Math.ceil`,Math.ceil(nota))
-let temperatura = -12.5
-console.log(Math.abs(temperatura))
-console.log(Math.max(42, 17, 89, 5, 63))
-console.log(Math.min(42, 17, 89, 5, 63))
+// let nota = 7.3
+// console.log(`Math.round`, Math.round(nota))
+// console.log(`Math.floor`,Math.floor(nota))
+// console.log(`Math.ceil`,Math.ceil(nota))
+// let temperatura = -12.5
+// console.log(Math.abs(temperatura))
+// console.log(Math.max(42, 17, 89, 5, 63))
+// console.log(Math.min(42, 17, 89, 5, 63))
 
 
 console.log("_______________________________");
@@ -229,11 +229,11 @@ let notas = [7.5, 8.2, 6.5, 9.0];
 let idades = [15, 22, 30, 18, 25];
 
 // → Seu código aqui:
-let calculo = precos[0] + precos[1] + precos[2] + precos [3]
-console.log(calculo.toFixed(2))
-let calculo2 = (notas[0] + notas[1] + notas [2] + notas[3])/4
-console.log(calculo2)
-console.log(Math.max(idades[0], idades[1], idades[2], idades[3], idades[4]), Math.min(idades[0], idades[1], idades[2], idades[3], idades[4]))
+// let calculo = precos[0] + precos[1] + precos[2] + precos [3]
+// console.log(calculo.toFixed(2))
+// let calculo2 = (notas[0] + notas[1] + notas [2] + notas[3])/4
+// console.log(calculo2)
+// console.log(Math.max(idades[0], idades[1], idades[2], idades[3], idades[4]), Math.min(idades[0], idades[1], idades[2], idades[3], idades[4]))
 
 console.log("_______________________________");
 
@@ -263,17 +263,31 @@ let turma = {
 // e) Exiba a nota mais alta e a mais baixa da turma
 
 // → Seu código aqui:
-turma.aluno1.notas.push(lerTeclado.question("Digite a 1º nota do primeiro aluno:"))
-turma.aluno1.notas.push(lerTeclado.question("Digite a 2º nota do primeiro aluno:"))
-turma.aluno1.notas.push(lerTeclado.question("Digite a 3º nota do primeiro aluno:"))
-turma.aluno2.notas.push(lerTeclado.question("Digite a 1º nota do segundo aluno:"))
-turma.aluno2.notas.push(lerTeclado.question("Digite a 2º nota do segundo aluno:"))
-turma.aluno2.notas.push(lerTeclado.question("Digite a 3º nota do segundo aluno:"))
-turma.aluno3.notas.push(lerTeclado.question("Digite a 1º nota do terceiro aluno:"))
-turma.aluno3.notas.push(lerTeclado.question("Digite a 2º nota do terceiro aluno:"))
-turma.aluno3.notas.push(lerTeclado.question("Digite a 3º nota do terceiro aluno:"))
-let media1 = (turma.aluno1.notas[0]+ turma.aluno1.notas[1]+ turma.aluno1.notas[2])/3
-console.log(media1)
+// turma.aluno1.notas.push(lerTeclado.questionInt("Digite a 1º nota do primeiro aluno:"))
+// turma.aluno1.notas.push(lerTeclado.questionInt("Digite a 2º nota do primeiro aluno:"))
+// turma.aluno1.notas.push(lerTeclado.questionInt("Digite a 3º nota do primeiro aluno:"))
+// turma.aluno2.notas.push(lerTeclado.questionInt("Digite a 1º nota do segundo aluno:"))
+// turma.aluno2.notas.push(lerTeclado.questionInt("Digite a 2º nota do segundo aluno:"))
+// turma.aluno2.notas.push(lerTeclado.questionInt("Digite a 3º nota do segundo aluno:"))
+// turma.aluno3.notas.push(lerTeclado.questionInt("Digite a 1º nota do terceiro aluno:"))
+// turma.aluno3.notas.push(lerTeclado.questionInt("Digite a 2º nota do terceiro aluno:"))
+// turma.aluno3.notas.push(lerTeclado.questionInt("Digite a 3º nota do terceiro aluno:"))
+// let media1 = (turma.aluno1.notas[0]+ turma.aluno1.notas[1]+ turma.aluno1.notas[2])/3
+// let media2 = (turma.aluno2.notas[0]+ turma.aluno2.notas[1]+ turma.aluno2.notas[2])/3
+// let media3 = (turma.aluno3.notas[0]+ turma.aluno3.notas[1]+ turma.aluno3.notas[2])/3
+// let mediaTotal = media1+media2+media3/3
+// console.log(mediaTotal.toFixed(1))
+// console.log(`A maior nota do aluno ${turma.aluno1.nome} é:`, Math.max(turma.aluno1.notas[0],turma.aluno1.notas[1], turma.aluno1.notas[2]))
+// console.log(`A maior nota do aluno ${turma.aluno2.nome} é:`, Math.max(turma.aluno2.notas[0],turma.aluno2.notas[1], turma.aluno2.notas[2]))
+// console.log(`A maior nota do aluno ${turma.aluno3.nome} é:`, Math.max(turma.aluno3.notas[0],turma.aluno3.notas[1], turma.aluno3.notas[2]))
+// console.log(`A menor nota do aluno ${turma.aluno1.nome} é:`, Math.min(turma.aluno1.notas[0],turma.aluno1.notas[1], turma.aluno1.notas[2]))
+// console.log(`A menor nota do aluno ${turma.aluno2.nome} é:`, Math.min(turma.aluno2.notas[0],turma.aluno2.notas[1], turma.aluno2.notas[2]))
+// console.log(`A menor nota do alunos ${turma.aluno3.nome} é:`, Math.min(turma.aluno3.notas[0],turma.aluno3.notas[1], turma.aluno3.notas[2]))
+
+
+
+
+
 
 
 

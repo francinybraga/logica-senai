@@ -447,66 +447,66 @@ console.log("_______________________________");
 //
 // → Seu código aqui:
 
-const nomeBiblioteca = lerTeclado.question("Digite o nome da biblioteca:") 
-const anoDeFundacao = lerTeclado.questionInt("Digite o ano da fundação:") 
-let capacidadeLivros = lerTeclado.questionInt("Qual a capacidade máxima de livros?:")
-let bibliotecaAberta = lerTeclado.keyInYN("A biblioteca está aberta? (s/n)")
-console.log (`O nome da bibliotca é ${nomeBiblioteca}, o ano da fundação é ${anoDeFundacao}, e a capaciade máxima de livros é ${capacidadeLivros}, e no momento ela está ${bibliotecaAberta ? 'aberta' : 'fechada'}`)
+// const nomeBiblioteca = lerTeclado.question("Digite o nome da biblioteca:") 
+// const anoDeFundacao = lerTeclado.questionInt("Digite o ano da fundação:") 
+// let capacidadeLivros = lerTeclado.questionInt("Qual a capacidade máxima de livros?:")
+// let bibliotecaAberta = lerTeclado.keyInYN("A biblioteca está aberta? (s/n)")
+// console.log (`O nome da bibliotca é ${nomeBiblioteca}, o ano da fundação é ${anoDeFundacao}, e a capaciade máxima de livros é ${capacidadeLivros}, e no momento ela está ${bibliotecaAberta ? 'aberta' : 'fechada'}`)
 
-let acervo = 
-[{
-    livros : 
-    [{
-        titulo: lerTeclado.question("Digite o nome do livro:"),
-        autor: lerTeclado.question("Digite o autor do livro:"),
-        ano: lerTeclado.questionInt("Digite o ano do lançamento do livro:"),
-        paginas: lerTeclado.question("Digite a quantidade de páginas:"), 
-        disponivel: lerTeclado.keyInYN("Está disponível?(s/n)")   
-    },{
-        titulo: lerTeclado.question("Digite o nome do livro:"),
-        autor: lerTeclado.question("Digite o autor do livro:"),
-        ano: lerTeclado.questionInt("Digite o ano do lançamento do livro:"),
-        paginas: lerTeclado.question("Digite a quantidade de páginas:"),
-        disponivel: lerTeclado.keyInYN("Está disponível?(s/n)")    
-    },{
-        titulo: lerTeclado.question("Digite o nome do livro:"),
-        autor: lerTeclado.question("Digite o autor do livro:"),
-        ano: lerTeclado.questionInt("Digite o ano do lançamento do livro:"),
-        paginas: lerTeclado.question("Digite a quantidade de páginas:"),
-        disponivel: lerTeclado.keyInYN("Está disponível?(s/n)")    
-    }],
+// let acervo = 
+// [{
+//     livros : 
+//     [{
+//         titulo: lerTeclado.question("Digite o nome do livro:"),
+//         autor: lerTeclado.question("Digite o autor do livro:"),
+//         ano: lerTeclado.questionInt("Digite o ano do lançamento do livro:"),
+//         paginas: lerTeclado.question("Digite a quantidade de páginas:"), 
+//         disponivel: lerTeclado.keyInYN("Está disponível?(s/n)")   
+//     },{
+//         titulo: lerTeclado.question("Digite o nome do livro:"),
+//         autor: lerTeclado.question("Digite o autor do livro:"),
+//         ano: lerTeclado.questionInt("Digite o ano do lançamento do livro:"),
+//         paginas: lerTeclado.question("Digite a quantidade de páginas:"),
+//         disponivel: lerTeclado.keyInYN("Está disponível?(s/n)")    
+//     },{
+//         titulo: lerTeclado.question("Digite o nome do livro:"),
+//         autor: lerTeclado.question("Digite o autor do livro:"),
+//         ano: lerTeclado.questionInt("Digite o ano do lançamento do livro:"),
+//         paginas: lerTeclado.question("Digite a quantidade de páginas:"),
+//         disponivel: lerTeclado.keyInYN("Está disponível?(s/n)")    
+//     }],
 
-}]
-console.log (acervo[0])
-console.log(acervo[0].livros[0].titulo)
-console.log(acervo[0].livros[1].autor)
-console.log(acervo[0].livros[2].paginas)
-console.log(acervo[0].livros.length)
+// }]
+// console.log (acervo[0])
+// console.log(acervo[0].livros[0].titulo)
+// console.log(acervo[0].livros[1].autor)
+// console.log(acervo[0].livros[2].paginas)
+// console.log(acervo[0].livros.length)
 
-acervo[0].livros[0].disponível = false
-acervo[0].livros[2].titulo = "Dom Casmurro"
-acervo[0].livros.push
-({
-    titulo: lerTeclado.question("Digite o nome do livro:"),
-    autor:"o hobbyt",
-    ano: "1980",
-    paginas: 567,
-    disponivel: true
-})
-console.log(acervo[0].livros.length)
+// acervo[0].livros[0].disponível = false
+// acervo[0].livros[2].titulo = "Dom Casmurro"
+// acervo[0].livros.push
+// ({
+//     titulo: lerTeclado.question("Digite o nome do livro:"),
+//     autor:"o hobbyt",
+//     ano: "1980",
+//     paginas: 567,
+//     disponivel: true
+// })
+// console.log(acervo[0].livros.length)
 
-let secoes = ["Ficção", "Ciências", "História", "Infantil"]
-console.log(secoes[0],secoes[3])
-secoes.push("Tecnologia")
-console.log(secoes)
-secoes.shift()
-console.log(secoes)
-console.log(`${nomeBiblioteca}, fundada ${anoDeFundacao}`)
-console.log(acervo[0].livros.length)
-console.log(acervo[0].livros.disponivel(true).length)
-console.log(acervo[0].livros[0].autor,acervo[0].livros[0].titulo)
-console.log(acervo[0].livros[1].autor,acervo[0].livros[1].titulo)
-console.log(acervo[0].livros[2].autor,acervo[0].livros[2].titulo)
+// let secoes = ["Ficção", "Ciências", "História", "Infantil"]
+// console.log(secoes[0],secoes[3])
+// secoes.push("Tecnologia")
+// console.log(secoes)
+// secoes.shift()
+// console.log(secoes)
+// console.log(`${nomeBiblioteca}, fundada ${anoDeFundacao}`)
+// console.log(acervo[0].livros.length)
+// console.log(acervo[0].livros.disponivel(true).length)
+// console.log(acervo[0].livros[0].autor,acervo[0].livros[0].titulo)
+// console.log(acervo[0].livros[1].autor,acervo[0].livros[1].titulo)
+// console.log(acervo[0].livros[2].autor,acervo[0].livros[2].titulo)
 
 console.log("_______________________________");
 
@@ -549,6 +549,7 @@ console.log("_______________________________");
 // - Nome, preço e se é vegano de CADA prato (um prato por linha)
 //
 // → Seu código aqui:
+
 
 
 console.log("_______________________________");

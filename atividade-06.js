@@ -158,11 +158,11 @@ console.log("_______________________________");
 // c) Exiba a variável "diagnostico" com template literal mostrando a temperatura e o resultado do diagnóstico.
 
 // → Seu código aqui:
-let temperatura =  38.2
+// let temperatura =  38.2
 
-let diagnostico = temperatura >= 37.6 ? "Febre detectada" : "Temperatura normal"
-console.log(`Temperatura: ${temperatura}`)
-console.log(`Diagnostico: ${diagnostico}`)
+// let diagnostico = temperatura >= 37.6 ? "Febre detectada" : "Temperatura normal"
+// console.log(`Temperatura: ${temperatura}`)
+// console.log(`Diagnostico: ${diagnostico}`)
 
  
 
@@ -201,11 +201,11 @@ console.log("_______________________________");
 // c) Exiba a variável "mensagem" com template literal.
 
 // → Seu código aqui:
-let ehEstudante = lerTeclado.keyInYN("Você é bolsista? (s/n)")
-let mensalidade = lerTeclado.keyInYN("Você paga mais que R$ 1000,00 mensais:")
-let mensagem = ehEstudante && mensalidade ? 'Desconto aplicado' : 'Desconto não aplicado'
+// let ehEstudante = lerTeclado.keyInYN("Você é bolsista? (s/n)")
+// let mensalidade = lerTeclado.keyInYN("Você paga mais que R$ 1000,00 mensais:")
+// let mensagem = ehEstudante && mensalidade ? 'Desconto aplicado' : 'Desconto não aplicado'
 
-console.log(mensagem)
+// console.log(mensagem)
 console.log("_______________________________");
 
 
@@ -226,6 +226,22 @@ console.log("_______________________________");
 //    Caso contrário → "Entrada negada."
 
 // → Seu código aqui:
+// let usuario = {
+//     idade: lerTeclado.questionInt("Digite sua idade:"),
+//     ingresso: lerTeclado.keyInYN("Possui ingresso?(s/n)"),
+//     associado: lerTeclado.keyInYN("É associado?(s/n)")
+// }
+// let podeEntrarNormal= usuario.idade >= 18 && usuario.ingresso || usuario.associado
+// let podeEntrarSocio = usuario.ingresso && usuario.associado
+// let precisaAcompanhante = usuario.idade < 18
+// let naoPodeEntrar = !usuario.ingresso && !usuario.associado 
+// console.log (`Se podeEntrarNormal → ${podeEntrarNormal}`)
+// console.log (`Se podeEntrarSocio → ${podeEntrarSocio}`)
+// console.log (`Se precisaAcompanhante → ${precisaAcompanhante}`)
+// console.log (`Se naoPodeEntrar → ${naoPodeEntrar}`)
+
+
+
 
 
 console.log("_______________________________");
@@ -246,6 +262,17 @@ console.log("_______________________________");
 // d) Exiba os resultados com template literal.
 
 // → Seu código aqui:
+// let produto = {
+//     nome: lerTeclado.question("Digite o nome do produto:"),
+//     quantidade: lerTeclado.questionInt("Digite a quantidade em estoque:"),
+//     ativo: lerTeclado.keyInYN("O produto está ativo?(s/n)")
+// }
+// let temEstoque = produto.quantidade > 0
+// let produtoDisponivel = temEstoque && produto.ativo
+// let produtoIndisponivel = !temEstoque && !produto.ativo
+// console.log(`Tem estoque → ${temEstoque}`)
+// console.log(`Produto está disponível → ${produtoDisponivel}`)
+// console.log(`Produto indiponível → ${produtoIndisponivel}`)
 
 
 console.log("_______________________________");
@@ -266,6 +293,18 @@ console.log("_______________________________");
 // d) Exiba todos os resultados.
 
 // → Seu código aqui:
+// let usuario = {
+//     administrador: lerTeclado.keyInYN("Você é adm?(s/n)"),
+//     logado: lerTeclado.keyInYN("Você está logado?(s/n)"),
+//     ativo: lerTeclado.keyInYN("A conta está ativa?(s/n)")
+// }
+// let acessoSistema = usuario.logado && usuario.ativo
+// let acessoAdmin = acessoSistema && usuario.administrador
+// let acessoNegado = !usuario.logado || !usuario.ativo
+// console.log(`Tem acesso ao sistema: ${acessoSistema}`)
+// console.log(`Tem acesso de adm: ${acessoAdmin}`)
+// console.log(`Tem o acesso negado: ${acessoNegado}`)
+
 
 
 console.log("_______________________________");
@@ -289,6 +328,21 @@ console.log("_______________________________");
 //    Caso contrário → "Usuário ou senha incorretos."
 
 // → Seu código aqui:
+// let credenciaisSistema = {
+//     usuario: "admin",
+//     senha: "1234"
+// }
+// let a = {
+//     usuario: lerTeclado.question("Digite o usuário:"),
+//     senha: lerTeclado.question("Digite a senha")
+// }
+// let usuarioCorreto = a.usuario === credenciaisSistema.usuario
+// let senhaCorreta = a.senha === credenciaisSistema.senha
+// let loginValido = usuarioCorreto && senhaCorreta
+// console.log(`${loginValido ? "Login realizado com sucesso!" : "Usuario ou senha incorretos!"}`)
+
+
+
 
 
 console.log("_______________________________");

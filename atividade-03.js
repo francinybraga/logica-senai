@@ -161,35 +161,36 @@ console.log("_______________________________");
 // let listaDeUsuário = [
 //     {
 //         nome: lerTeclado.question("Digite seu nome:"),
-//         idade: lerTeclado.question("Digite sua idade:"),
-//         endereço: endereço = {
+//         idade: lerTeclado.questionInt("Digite sua idade:"),
+//         endereco: endereço = {
 //             cidade: lerTeclado.question("Digite sua cidade:"),
 //             rua: lerTeclado.question("Digite sua rua:"),
-//             numero: lerTeclado.question("Digite o numero da sua casa:")
+//             numero: lerTeclado.questionInt("Digite o numero da sua casa:")
 //         }
 //     },
 //     {
-//         nome1: lerTeclado.question("Digite seu nome:"),
-//         idade1: lerTeclado.question("Digite sua idade:"),
-//         endereço1: endereço = {
+//         nome: lerTeclado.question("Digite seu nome:"),
+//         idade: lerTeclado.questionInt("Digite sua idade:"),
+//         endereco: endereço = {
 //             cidade: lerTeclado.question("Digite sua cidade:"),
 //             rua: lerTeclado.question("Digite sua rua:"),
-//             numero: lerTeclado.question("Digite o numero da sua casa:")
+//             numero: lerTeclado.questionInt("Digite o numero da sua casa:")
 //         }
 //     },
 //     {
-//         nome2: lerTeclado.question("Digite seu nome:"),
-//         idade2: lerTeclado.question("Digite sua idade:"),
-//         endereço2: endereço = {
+//         nome: lerTeclado.question("Digite seu nome:"),
+//         idade: lerTeclado.questionInt("Digite sua idade:"),
+//         endereco: endereço = {
 //             cidade: lerTeclado.question("Digite sua cidade:"),
 //             rua: lerTeclado.question("Digite sua rua:"),
-//             numero: lerTeclado.question("Digite o numero da sua casa:")
+//             numero: lerTeclado.questionInt("Digite o numero da sua casa:")
 //         }
 //     }
 // ]
 // console.table(listaDeUsuário)
-// console.log(listaDeUsuário[1].nome1)
-// console.log(listaDeUsuário[1].idade1)
+// console.log(listaDeUsuário[1].nome, listaDeUsuário[1].idade)
+// console.log(listaDeUsuário[2].endereco)
+// console.log(listaDeUsuário[0].nome, listaDeUsuário[0].endereco.rua)
 
 
 
@@ -277,19 +278,19 @@ console.log("_______________________________");
 // d) Exiba somente o nome e preço do 2 medicamento.
 // e) Exiba somente o nome e se está em estoque o 1 medicamento.
 
-let medicamento1 = {
-    nome: lerTeclado.question("Digite o nome do medicamento:"),
-    preco: lerTeclado.questionInt("Digite o preço:"),
-    estoque: lerTeclado.keyInYN("Tem em estoque? (s/n)")
-}
-let medicamento2 = {
-    nome: lerTeclado.question("Digite o nome do medicamento:"),
-    preco: lerTeclado.questionInt("Digite o preço:"),
-    estoque: lerTeclado.keyInYN("Tem em estoque? (s/n)")
-}
-let estoqueFarmacia = []
-estoqueFarmacia.push(medicamento1)
-estoqueFarmacia.push(medicamento2)
+// let medicamento1 = {
+//     nome: lerTeclado.question("Digite o nome do medicamento:"),
+//     preco: lerTeclado.questionInt("Digite o preço:"),
+//     estoque: lerTeclado.keyInYN("Tem em estoque? (s/n)")
+// }
+// let medicamento2 = {
+//     nome: lerTeclado.question("Digite o nome do medicamento:"),
+//     preco: lerTeclado.questionInt("Digite o preço:"),
+//     estoque: lerTeclado.keyInYN("Tem em estoque? (s/n)")
+// }
+// let estoqueFarmacia = []
+// estoqueFarmacia.push(medicamento1)
+// estoqueFarmacia.push(medicamento2)
 
-console.table(estoqueFarmacia)
-console.log(estoqueFarmacia[1].nome,estoqueFarmacia[1].preco)
+// console.table(estoqueFarmacia)
+// console.log(estoqueFarmacia[1].nome,estoqueFarmacia[1].preco)

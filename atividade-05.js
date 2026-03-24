@@ -217,23 +217,23 @@ console.log("_______________________________");
 // d) Similar ao exemplo acima, verifique e exiba qual pessoa é mais velha.
 
 // → Seu código aqui:
-let cadastro =  [{ 
-    nome: lerTeclado.question("Digite o nome:"),
-    idade: lerTeclado.questionInt("Digite a idade:")
-},{
-    nome: lerTeclado.question("Digite o nome:"),
-    idade: lerTeclado.questionInt("Digite a idade:")
-}] 
-let pessoa1 = cadastro[0].idade
-let pessoa2 = cadastro[1].idade
-let maior = cadastro[0].idade > cadastro[1].idade
-let menor = cadastro[0].idade < cadastro[1].idade
-let igual = cadastro[0].idade === cadastro[1].idade
-let maiorIgual = cadastro[0].idade >= 18
-let maiorI2 = cadastro[1].idade >= 18 
-console.log(`Idade da ${cadastro[0].nome} é ${cadastro[0].idade} e ela é ${maiorIgual ? 'Maior de idade': 'Menor de idade'}.`)
-console.log(`Idade da ${cadastro[1].nome} é ${cadastro[1].idade} e ela é ${maiorI2 ? 'Maior de idade' : 'Menor de idade'}.`)
-console.log(`${maior ? cadastro[0].nome : cadastro[1].nome}`)
+// let cadastro =  [{ 
+//     nome: lerTeclado.question("Digite o nome:"),
+//     idade: lerTeclado.questionInt("Digite a idade:")
+// },{
+//     nome: lerTeclado.question("Digite o nome:"),
+//     idade: lerTeclado.questionInt("Digite a idade:")
+// }] 
+// let pessoa1 = cadastro[0].idade
+// let pessoa2 = cadastro[1].idade
+// let maior = cadastro[0].idade > cadastro[1].idade
+// let menor = cadastro[0].idade < cadastro[1].idade
+// let igual = cadastro[0].idade === cadastro[1].idade
+// let maiorIgual = cadastro[0].idade >= 18
+// let maiorI2 = cadastro[1].idade >= 18 
+// console.log(`Idade da ${cadastro[0].nome} é ${cadastro[0].idade} e ela é ${maiorIgual ? 'Maior de idade': 'Menor de idade'}.`)
+// console.log(`Idade da ${cadastro[1].nome} é ${cadastro[1].idade} e ela é ${maiorI2 ? 'Maior de idade' : 'Menor de idade'}.`)
+// console.log(`${maior ? cadastro[0].nome : cadastro[1].nome}`)
 
 console.log("_______________________________");
 
@@ -247,6 +247,30 @@ console.log("_______________________________");
 // c) Compare e exiba no console, qual aluno obteve a primeira maior nota, a segunda e a terceira.
 //    Exemplo: `Aluno com primeira maior nota: ${nota1aluno1 > nota1aluno2 ? nomeAluno1 : nomeAluno2}`
 // → Seu código aqui:
+// let aluno1 = {
+//     nota1: lerTeclado.questionInt("digite a primeira nota: "),
+//     nota2:lerTeclado.questionInt("digite a segunda nota: "),
+//     nota3:lerTeclado.questionInt("digite a terceira nota: ")
+// }
+// let aluno2 = {
+//     nota1: lerTeclado.questionInt("digite a primeira nota: "),
+//     nota2:lerTeclado.questionInt("digite a segunda nota: "),
+//     nota3:lerTeclado.questionInt("digite a terceira nota: ")
+// }
+
+// let mediaAluno1 = aluno1.nota1+aluno1.nota2+aluno1.nota3/3
+// let mediaAluno2 = aluno2.nota1+aluno2.nota2+aluno2.nota3/3
+// let notaMaior = mediaAluno1 > mediaAluno2 ? "Aluno1 média maior" : "Aluno2 média maior"
+// console.log(`Qual aluno tem a nota maior? ${notaMaior}`)
+// console.log(mediaAluno1.toFixed(1))
+// console.log(mediaAluno2.toFixed(1))
+// let nota1M = aluno1.nota1 > aluno2.nota1 ? "aluno1 com nota1 maior" : "aluno2 com nota1 maior"
+// let nota2M = aluno1.nota2 > aluno2.nota2 ? "aluno1 com nota2 maior" : "aluno2 com nota2 maior"
+// let nota3M = aluno1.nota3 > aluno2.nota3 ? "aluno1 com nota3 maior" : "aluno2 com nota3 maior"
+// console.log(`Aluno com primeira maior nota: ${nota1M}`)
+// console.log(`Aluno com segunda maior nota: ${nota2M}`)
+// console.log(`Aluno com terceira maior nota: ${nota3M}`)
+
 
 
 console.log("_______________________________");
