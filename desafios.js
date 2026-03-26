@@ -1,161 +1,181 @@
 // ============================================================
-//   DESAFIOS (para quem já terminou as atividades 02 e 02-2) – Arrays e Objetos em JavaScript
+//   DESAFIOS (para quem já terminou a atividade 07) – If / Else
 // ============================================================
-// Instruções: resolva cada exercício no espaço indicado.
-// Use console.log() para exibir os resultados.
+// Instruções: resolva cada desafio no espaço indicado.
 // ============================================================
 
-
+let lerTeclado = require('readline-sync')
 // ------------------------------------------------------------
-// EXERCÍCIO 1 – Acessar e alterar elementos de array
+// DESAFIO 1 – Classificador de IMC
 // ------------------------------------------------------------
-const frutas = ['maçã', 'banana', 'laranja', 'uva'];
-// a) Acesse o primeiro e o terceiro elemento e exiba com console.log().
-// b) Substitua o segundo elemento por 'abacaxi' usando atribuição direta.
+// Já realizamos um exercício similar, mas agora vamos aprimorar e exibir somente o resultado final.
+// a) Pergunte ao usuário seu nome, peso (kg) e altura (m).
+// b) Armazene os dados em um objeto "pessoa".
+// c) Calcule o IMC: peso / (altura ** 2). Adicione ao objeto.
+// d) Classifique o IMC usando if/else if/else e adicione a classificação ao objeto:
+//    - IMC < 18.5          → "Abaixo do peso"
+//    - IMC >= 18.5 e < 25  → "Peso normal"
+//    - IMC >= 25 e < 30    → "Sobrepeso"
+//    - IMC >= 30 e < 35    → "Obesidade grau I"
+//    - IMC >= 35 e < 40    → "Obesidade grau II"
+//    - IMC >= 40           → "Obesidade grau III"
+// e) Exiba o objeto com console.table().
+// f) Exiba uma mensagem final:
+//    "<nome>, seu IMC é <imc> – <classificação>."
 
 // → Seu código aqui:
-console.log (frutas [0], frutas [2]);
-frutas.splice(1, 1, "abacaxi");
-console.log (frutas)
+// let pessoa = {
+//     nome: lerTeclado.question("Digite seu nome: "),
+//     peso: lerTeclado.questionFloat("Digite seu peso: "),
+//     altura: lerTeclado.questionFloat("Digite sua altura: ")
+// }
+// IMC = pessoa.peso / (pessoa.altura**2)
+// pessoa.IMC = IMC
+// if(pessoa.IMC < 18.5){
+//     console.log(`${pessoa.IMC.toFixed(2)} Abaixo do peso`)
+// } else if(pessoa.IMC >= 18.5 && pessoa.IMC < 25 ){
+//     console.log(`${pessoa.IMC.toFixed(2)} Peso normal`)
+// } else if (pessoa.IMC >= 25 && pessoa.IMC < 30 ){
+//     console.log(`${pessoa.IMC.toFixed(2)} Sobrepeso`)
+// } else if (pessoa.IMC >= 30 && pessoa.IMC < 35 ){
+//     console.log(`${pessoa.IMC.toFixed(2)} Obesidade grau I`)
+// } else if (pessoa.IMC >= 35 && pessoa.IMC < 40 ){
+//     console.log(`${pessoa.IMC.toFixed(2)} Obesidade grau II`)
+// } else {
+//     console.log(`Obesidade grau III`)
+// }
+console.log("_______________________________");
 
+
+// ------------------------------------------------------------
+// DESAFIO 2 – Caixa eletrônico
+// ------------------------------------------------------------
+// a) Defina um objeto "conta" com:
+//    - titular: "Maria"
+//    - saldo: 1500
+//    - bloqueada: false
+//    - senha: 1234
+// b) Peça ao usuário:
+//    - Senha de 4 dígitos.
+// c) Verifique se a senha está correta.
+//    - Se estiver incorreta → "Senha incorreta. Operação cancelada."
+//    - Se estive correta, pergunte ao usuário se deseja sacar ou depositar um valor
+// d) Se ele escolher sacar, pergunte qual valor que deseja sacar.
+//    Se ele escolher depositar, pergunte qual valor que deseja depositar.
+// e) Se for saque, usando if/else if/else (aninhado se necessário), verifique:
+//    1. Se a conta está bloqueada → "Conta bloqueada. Procure uma agência."
+//    2. Se o valor do saque for menor ou igual a 0 → "Valor inválido."
+//    3. Se o saldo for insuficiente → "Saldo insuficiente. Saldo atual: R$ <saldo>"
+//    4. Caso contrário → realize o saque, atualize o saldo e exiba:
+//       "Saque de R$ <valor> realizado. Novo saldo: R$ <saldo>"
+// f) Se for depósito, usando if/else if/else (aninhado se necessário), verifique:
+//    1. Se a conta está bloqueada → "Conta bloqueada. Procure uma agência."
+//    2. Se o valor do depósito for menor ou igual a 0 → "Valor inválido."
+//    3. Caso contrário → realize o depósito, atualize o saldo e exiba:
+//       "Depósito de R$ <valor> realizado. Novo saldo: R$ <saldo>"
+// Evite repetir linhas de código.
+// Verifique se é possível fazer verificações uma única vez, alterando a lógica ao invés de duplicar código.
+
+// → Seu código aqui:
+let conta = {
+    titular: "Maria",
+    saldo: 1500,
+    bloqueada: false,
+    senha: 1234
+}
+let senha = lerTeclado.question("Digite a senha: ")
+if(senha != conta.senha){
+    console.log("Senha incorreta. Operação cancelada.")
+} else {
+    
+}
+
+console.log("_______________________________");
+
+
+// ------------------------------------------------------------
+// DESAFIO 3 – Classificação de filmes por faixa etária
+// ------------------------------------------------------------
+// Classificação indicativa:
+//   - Livre          → todas as idades
+//   - 10 anos        → 10 anos ou mais
+//   - 12 anos        → 12 anos ou mais
+//   - 14 anos        → 14 anos ou mais
+//   - 16 anos        → 16 anos ou mais
+//   - 18 anos        → 18 anos ou mais
+//
+// a) Pergunte ao usuário:
+//    - Nome do espectador.
+//    - Idade do espectador.
+//    - Classificação do filme escolhido:
+//      0 – Livre | 10 – 10 anos | 12 – 12 anos |
+//      14 – 14 anos | 16 – 16 anos | 18 – 18 anos
+// b) Armazene os dados em um objeto "cinema".
+// c) Usando if/else if/else, verifique se o espectador pode assistir ao filme:
+//    - Se a classificação for 0 (Livre) → sempre pode.
+//    - Nos demais casos, compare a idade com a classificação.
+// d) Exiba o resultado:
+//    - Pode assistir → "<nome> pode assistir. Boa sessão!"
+//    - Não pode → "<nome> não pode assistir. Classificação: <classificação> anos."
+
+// → Seu código aqui:
 
 
 console.log("_______________________________");
 
 
 // ------------------------------------------------------------
-// EXERCÍCIO 2 – Criar novos arrays por seleção
+// DESAFIO 4 – Simulador de pedido de lanche
 // ------------------------------------------------------------
-const letras1 = ['a', 'b', 'c', 'd', 'e', 'f'];
-// a) Crie um novo array contendo apenas o primeiro, o terceiro e o sexto elementos.
-// b) Crie outro array que contenha os dois últimos elementos.
-// Observação: Utilize o valor de um array dentro de outro, exemplo: array2[array1[3], array[5]]
+// Cardápio:
+//   1 – X-Burguer R$ 22,00
+//   2 – X-Frango  R$ 20,00
+//   3 – X-Veggie  R$ 18,00
+//   4 – Combo (lanche + batata + refri)  R$ 35,00
+//
+// Adicionais (só para os itens 1, 2 e 3):
+//   - Batata frita: + R$ 8,00
+//   - Refrigerante: + R$ 5,00
+//
+// a) Pergunte ao usuário:
+//    - Nome.
+//    - Número do lanche desejado.
+//    - Se o lanche não for o Combo:
+//        - Quer batata frita?
+//        - Quer refrigerante?
+// b) Armazene todos os dados e o total calculado em um objeto "pedido".
+// c) Calcule o total com base nas escolhas.
+// d) Exiba o objeto "pedido" com console.table().
+// e) Exiba o resumo final com template literal:
+//    "Pedido de <nome>: <lanche> + adicionais = R$ <total>"
 
 // → Seu código aqui:
-console.log (letras1[0], letras1[2], letras1[5]);
-console.log (letras1[4], letras1[5]);
 
 
 console.log("_______________________________");
 
 
 // ------------------------------------------------------------
-// EXERCÍCIO 3 – Batata?
+// DESAFIO 5 – Simulador de semáforo inteligente
 // ------------------------------------------------------------
-const letras2 = ['a', 'b', 'c', 'd', 'e', 't'];
-// a) Crie um novo array que retorne a palavra "batata" ao ser exibido no console.
-console.log (letras2[1], letras2[0], letras2[5],letras2[0], letras2 [5],letras2[0])
-
-
-console.log("_______________________________");
-
-
-// ------------------------------------------------------------
-// EXERCÍCIO 4 – Objetos: acessar e adicionar propriedades
-// ------------------------------------------------------------
-const pessoa = { nome: 'Junin', idade: 22, cidade: 'Porto Alegre' };
-// a) Acesse e exiba a propriedade 'nome' e 'cidade'.
-// b) Adicione uma nova propriedade 'curso' com valor 'Programação' por atribuição direta.
+// Um semáforo funciona assim:
+//   - Verde  → siga (velocidade permitida: até 60 km/h)
+//   - Amarelo → atenção (reduza a velocidade)
+//   - Vermelho → pare
+//
+// a) Pergunte ao usuário - simulando os dados captados pelo radar:
+//    - Cor atual do semáforo: "verde", "amarelo" ou "vermelho".
+//    - Velocidade atual do veículo em km/h.
+// b) Usando if/else if/else, avalie a situação:
+//    - "verde" e velocidade menor ou igual que 60 → "Tudo certo. Pode seguir."
+//    - "verde" e velocidade maior que 60 → "Atenção: acima do limite no sinal verde."
+//    - "amarelo" → "Reduza a velocidade e prepare-se para parar."
+//    - "vermelho" e velocidade maior que 0 → "PARE! Você avançou o sinal vermelho."
+//    - "vermelho" e velocidade igual a 0 → "Correto. Aguarde o sinal abrir."
+//    - qualquer outra cor → "Cor de semáforo inválida."
+// c) Exiba o resultado com template literal.
 
 // → Seu código aqui:
-console.log(pessoa.nome,pessoa.cidade)
-pessoa.curso="Programação"
-console.log(pessoa)
 
-
-
-
-console.log("_______________________________");
-
-
-// ------------------------------------------------------------
-// EXERCÍCIO 5 – Objetos aninhados e arrays dentro de objetos
-// ------------------------------------------------------------
-const perfild = {
-  usuario: 'ana123',
-  dados: { nome: 'Ana', idade: 19 },
-  interesses: ['música', 'fotografia', 'viagens']
-};
-// a) Acesse o nome dentro de 'dados' e o segundo interesse.
-// b) Altere o primeiro interesse para 'arte' por atribuição direta.
-
-// → Seu código aqui:
-console.log(perfild.dados.nome,perfild.interesses[1])
-perfild.interesses[0]="arte"
-console.log (perfild.interesses)
-
-console.log("_______________________________");
-
-
-// ------------------------------------------------------------
-// EXERCÍCIO 6 – Criar um catálogo (array de objetos e objeto indexado)
-// ------------------------------------------------------------
-// Crie um array 'produtos' contendo 3 produtos, onde cada produto é um objeto contendo id, nome e preço.
-// Crie um objeto 'catalogo' onde as chaves são os ids dos produtos e os valores são o nome
-// e os valores são os objetos de produto correspondentes (sem usar loops ou funções).
-
-// → Seu código aqui:
-  let produtos = [{
-    id: 1234,
-    nome: "celular",
-    preço: 4500.00
-  },
-  {
-    id: 456,
-    nome: "carregador",
-    preço: 100.00
-  },
-  {
-  id: 789,
-  nome: "fone",
-  preço: 350.00
-  }]
-
-  let catalogo = { 
-   1234: produtos[0],
-   456: produtos[1],
-   789: produtos[2]
-  }
-  console.log (
-     catalogo[456],
-     catalogo[1234],
-     catalogo[789])
-  
-
-console.log("_______________________________");
-
-
-// ------------------------------------------------------------
-// EXERCÍCIO 7 – Estrutura composta: tarefas simples
-// ------------------------------------------------------------
-// Defina um array de tarefas com 3 objetos: { id, titulo, concluida(boolean) }.
-// a) Marque a tarefa de id 2 como concluída por atribuição direta.
-// b) Crie um novo array contendo apenas as tarefas que não estão concluídas
-
-// → Seu código aqui:
-let tarefas= [{
-  id:1,
-  titulo: "verificar",
-  concluida: false
-},
-{
-  id:2,
-  titulo: "fazer",
-  concluida: false
-},
-{ 
-  id:3,
-  titulo: "planilha",
-  concluida: false
-}]
-tarefas[1].concluida = true
-
-let naoConcluidas=[
-  tarefas[0],
-  tarefas[2]
-]
-
-
-console.log(naoConcluidas)
 
 console.log("_______________________________");
