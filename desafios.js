@@ -83,12 +83,11 @@ let conta = {
     bloqueada: false,
     senha: 1234
 }
+let sacar
+let depositar
 let senha = lerTeclado.question("Digite a senha: ")
-if(senha != conta.senha){
-    console.log("Senha incorreta. Operação cancelada.")
-} else {
     
-}
+
 
 console.log("_______________________________");
 
