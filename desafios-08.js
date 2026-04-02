@@ -157,6 +157,14 @@ switch(usuario.nBebida){
     default:
     console.log("Item inválido.")
 }
+if (usuario.nPrato === '') {
+    console.log("Nome inválido")
+} else if( nomeP < 1 || nomeP > 5){
+    console.log("Prato inválido!")
+} else if(nomeB < 6 || nomeB > 9){
+    console.log("Bedida inválida")
+}
+
 let pedido ={
     nomeCliente: usuario.nome, 
     nomePrato:nomeP, 
@@ -165,15 +173,26 @@ let pedido ={
     precoBebida:precoB,
     total: precoP + precoB
 }
+
 console.log(pedido)
 
 let pix = lerTeclado.keyInYN("Pagará no pix? (s/n)")
-let desconto 
-let precoFinal
+let desconto = 0
+let precoFinal = pedido.total
+
 if(pix){
-    desconto = pedido.total * (10/100)
-    
+    desconto = pedido.total *(10/100)
+    precoFinal -= desconto
+} else {
+    console.log("Sem desconto")
 }
+console.table(pedido)
+console.log(`
+O pedido do(a) cliente ${pedido.nomeCliente}: ${pedido.nomePrato} R$ ${pedido.precoPrato},00
+${pedido.nomeBebida} R$ ${pedido.precoBebida}
+total: R$ ${pedido.total}
+Desconto aplicado: R$ ${desconto.toFixed(2)}
+O valor total do pedido é:R$ ${precoFinal}`)
 
 console.log("_______________________________");
 
