@@ -1,8 +1,8 @@
-        // ============================================================
+// ============================================================
 //   ATIVIDADE 09 – Estruturas de Controle (Repetição - For)
 // ============================================================
 
-let readline = require('readline-sync')
+let readline = require("readline-sync");
 // ------------------------------------------------------------
 // EXERCÍCIO 1 – Contagem simples
 // ------------------------------------------------------------
@@ -11,12 +11,12 @@ let readline = require('readline-sync')
 // b) Ao final, exiba: "Contagem concluída!"
 
 // → Seu código aqui:
-for(let i = 5; i <= 12 ; i++){
-    console.log(`${i}`)
-} console.log(`Contagem concluída!`);
+for (let i = 5; i <= 12; i++) {
+  console.log(`${i}`);
+}
+console.log(`Contagem concluída!`);
 
 console.log("_______________________________");
-
 
 // ------------------------------------------------------------
 // EXERCÍCIO 2 – Contagem decrescente
@@ -26,13 +26,12 @@ console.log("_______________________________");
 // b) Ao final, exiba: "Lançamento! 🚀"
 
 // → Seu código aqui:
-for(let i = 10; i >= 3 ; i--){
-    console.log(`${i}`)
-} console.log("Lançamento! 🚀")
-
+for (let i = 10; i >= 3; i--) {
+  console.log(`${i}`);
+}
+console.log("Lançamento! 🚀");
 
 console.log("_______________________________");
-
 
 // ------------------------------------------------------------
 // EXERCÍCIO 3 – Números pares
@@ -41,16 +40,14 @@ console.log("_______________________________");
 // b) Ao final, exiba quantos números pares foram exibidos.
 
 // → Seu código aqui:
-let contador = 0
-for(let i = 0; i <= 30; i += 2){
-    console.log(i)
-   contador++
+let contador = 0;
+for (let i = 0; i <= 30; i += 2) {
+  console.log(i);
+  contador++;
 }
-console.log("Foram exibidos",contador, "numeros pares")
-
+console.log("Foram exibidos", contador, "numeros pares");
 
 console.log("_______________________________");
-
 
 // ------------------------------------------------------------
 // EXERCÍCIO 4 – Tabuada
@@ -61,14 +58,13 @@ console.log("_______________________________");
 
 // → Seu código aqui:
 
-let a = readline.questionInt('Um numero: ')
+let a = readline.questionInt("Um numero: ");
 
 for (i = 1; i <= 10; i++) {
-    console.log(`${a} x ${i} = ${(a * i)}`)
+  console.log(`${a} x ${i} = ${a * i}`);
 }
 
 console.log("_______________________________");
-
 
 // ------------------------------------------------------------
 // EXERCÍCIO 5 – Soma acumulada
@@ -78,15 +74,14 @@ console.log("_______________________________");
 // c) Exiba: "A soma de 1 até <N> é <soma>"
 
 // → Seu código aqui:
-let b = readline.questionInt("Digite um numero: ")
-let soma = 0
-for(let i = 0; i <= b; i++){
-    soma+= i
+let b = readline.questionInt("Digite um numero: ");
+let soma = 0;
+for (let i = 0; i <= b; i++) {
+  soma += i;
 }
-console.log(`A soma de 1 até ${b} é ${soma}`)
+console.log(`A soma de 1 até ${b} é ${soma}`);
 
 console.log("_______________________________");
-
 
 // ------------------------------------------------------------
 // EXERCÍCIO 6 – Fatorial
@@ -98,69 +93,111 @@ console.log("_______________________________");
 // c) Exiba: "<N>! = <resultado>"
 
 // → Seu código aqui:
-let c = readline.questionInt("Digite um numero de 1 a 10: ")
-let resultado = 1
-for(let i = 1; i <= c; i++){
-    resultado *= i
-    console.log(`${i} * ${resultado} `)
+let c = readline.questionInt("Digite um numero de 1 a 10: ");
+
+if (c < 1 || c > 10) {
+  console.log("Número inválido!");
+} else {
+  let resultado = 1;
+  let conta = "";
+
+  for (let i = 1; i <= c; i++) {
+    resultado *= i;
+    conta += i;
+
+    if (i < c) {
+      conta += " x ";
+    }
+  }
+
+  console.log(`${c}! = ${conta} = ${resultado}`);
 }
-
-
 console.log("_______________________________");
-
 
 // ------------------------------------------------------------
 // EXERCÍCIO 7 – Percorrendo um array
 // ------------------------------------------------------------
 // a) Utilizando o array:
-    const cidades = ["São Paulo", "Rio de Janeiro", "Curitiba", "Salvador", "Fortaleza"];
+const cidades = [
+  "São Paulo",
+  "Rio de Janeiro",
+  "Curitiba",
+  "Salvador",
+  "Fortaleza",
+];
 // b) Utilizando de um for, exiba cada cidade com seu índice no formato:
 //    "[<indice>] - <Cidade>"
 // c) Ao final, exiba: "Total de cidades: <quantidade>"
 
 // → Seu código aqui:
-
+for (let i = 0; i < cidades.length; i++) {
+  console.log(`${i} - ${cidades[i]}`);
+}
+console.log(`Total de cidades: ${cidades.length}`);
 
 console.log("_______________________________");
-
 
 // ------------------------------------------------------------
 // EXERCÍCIO 8 – Maior e menor valor
 // ------------------------------------------------------------
 // a) Declare o array:
-//    const temperaturas = [28, 15, 32, 9, 21, 37, 14, 25];
+const temperaturas = [28, 15, 32, 9, 21, 37, 14, 25];
 // b) Usando um for, encontre o maior e o menor valor do array.
 // c) Exiba:
 //    "Maior temperatura: <maior>°C"
 //    "Menor temperatura: <menor>°C"
 
 // → Seu código aqui:
+let maior = temperaturas[0];
+let menor = temperaturas[0];
+for (let i = 0; i < temperaturas.length; i++) {
+  if (temperaturas[i] > maior) {
+    maior = temperaturas[i];
+  }
 
+  if (temperaturas[i] < menor) {
+    menor = temperaturas[i];
+  }
+}
+console.log(`
+Maior temperatura: ${maior}°C"
+Menor temperatura: ${menor}°C`);
 
 console.log("_______________________________");
-
 
 // ------------------------------------------------------------
 // EXERCÍCIO 9 – Contando com condição
 // ------------------------------------------------------------
 // a) Utilizando do array:
-    const idades = [12, 25, 17, 34, 15, 42, 16, 29, 8, 19];
+const idades = [12, 25, 17, 34, 15, 42, 16, 29, 8, 19];
 // b) Usando um for, conte:
 //    - Quantas pessoas são menores de idade (< 18)
 //    - Quantas são maiores de idade (>= 18)
 // c) Exiba os dois totais.
+let menorIdade = [0];
+let maiorIdade = [0];
+for (let i = 0; i < idades.length; i++) {
+  if (idades[i] < 18) {
+    menorIdade = idades[i];
+
+  } else {
+    maiorIdade = idades[i];
+
+  }
+
+}
+console.log(`menores de idade= ${menorIdade}
+    maiores de idade= ${maiorIdade}`);
 
 // → Seu código aqui:
 
-
 console.log("_______________________________");
-
 
 // ------------------------------------------------------------
 // EXERCÍCIO 10 – Média com array
 // ------------------------------------------------------------
 // a) Utilizando do array:
-    const salarios = [1800, 3200, 950, 4500, 2100, 1500, 7800, 2900];
+const salarios = [1800, 3200, 950, 4500, 2100, 1500, 7800, 2900];
 // b) Usando um for, calcule a média salarial.
 // c) Exiba a média no formato: "Média salarial: R$ <media>"
 // d) Usando outro for, exiba cada salário e se está acima ou abaixo da média:
@@ -169,9 +206,14 @@ console.log("_______________________________");
 
 // → Seu código aqui:
 
+let soma1 = 0
+for(let i = 0; i < salarios.length; i++){
+  soma1 += salarios[i]
+}
+let media = soma1 / salarios.length
+ console.log(`Média salarial: R$ ${media}`)
 
 console.log("_______________________________");
-
 
 // ------------------------------------------------------------
 // EXERCÍCIO 11 – Ranking de notas
@@ -191,10 +233,43 @@ console.log("_______________________________");
 // g) Exiba o array 'turma' com console.table().
 
 // → Seu código aqui:
+let aluno1 = {
+  nome: readline.question("Digite o nome do aluno: "),
+  nota1: readline.questionInt("Digite a primeira nota: "),
+  nota2: readline.questionInt("Digite a segunda nota: "),
+  nota3: readline.questionInt("Digite a terceira nota: ")
+}
+aluno1.media = ((aluno1.nota1+aluno1.nota2+aluno1.nota3) / 3)
+let aluno2 = {
+  nome: readline.question("Digite o nome do aluno: "),
+  nota1: readline.questionInt("Digite a primeira nota: "),
+  nota2: readline.questionInt("Digite a segunda nota: "),
+  nota3: readline.questionInt("Digite a terceira nota: ")
+}
+aluno2.media = ((aluno2.nota1+aluno2.nota2+aluno2.nota3) / 3)
+let aluno3 = {
+  nome: readline.question("Digite o nome do aluno: "),
+  nota1: readline.questionInt("Digite a primeira nota: "),
+  nota2: readline.questionInt("Digite a segunda nota: "),
+  nota3: readline.questionInt("Digite a terceira nota: ")
+}
+aluno3.media = ((aluno3.nota1+aluno3.nota2+aluno3.nota3) / 3)
+
+let turmas = [aluno1, aluno2, aluno3]
+for(let i = 0; i < turmas.length ; i++){
+  let aluno = turmas[i]
+  let media = aluno.media
+  if(media >= 7){
+    console.log("Aprovado")
+  } else if (media >= 5){
+    console.log("Recuperação")
+  } else {
+    console.log("Reprovado")
+  }
+}
 
 
 console.log("_______________________________");
-
 
 // ------------------------------------------------------------
 // EXERCÍCIO 12 – Coletando dados com for e input
@@ -210,6 +285,5 @@ console.log("_______________________________");
 // f) Exiba o array com console.table().
 
 // → Seu código aqui:
-
 
 console.log("_______________________________");
