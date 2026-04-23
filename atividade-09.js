@@ -141,27 +141,27 @@ let readline = require("readline-sync");
 // // EXERCÍCIO 8 – Maior e menor valor
 // // ------------------------------------------------------------
 // // a) Declare o array:
-// const temperaturas = [28, 15, 32, 9, 21, 37, 14, 25];
+const temperaturas = [28, 15, 32, 9, 21, 37, 14, 25];
 // // b) Usando um for, encontre o maior e o menor valor do array.
 // // c) Exiba:
 // //    "Maior temperatura: <maior>°C"
 // //    "Menor temperatura: <menor>°C"
 
 // // → Seu código aqui:
-// let maior = temperaturas[0];
-// let menor = temperaturas[0];
-// for (let i = 0; i < temperaturas.length; i++) {
-//   if (temperaturas[i] > maior) {
-//     maior = temperaturas[i];
-//   }
+let maior = temperaturas[0];
+let menor = temperaturas[0];
+for (let i = 0; i < temperaturas.length; i++) {
+  if (temperaturas[i] > maior) {
+    maior = temperaturas[i];
+  }
 
-//   if (temperaturas[i] < menor) {
-//     menor = temperaturas[i];
-//   }
-// }
-// console.log(`
-// Maior temperatura: ${maior}°C"
-// Menor temperatura: ${menor}°C`);
+  if (temperaturas[i] < menor) {
+    menor = temperaturas[i];
+  }
+}
+console.log(`
+Maior temperatura: ${maior}°C"
+Menor temperatura: ${menor}°C`);
 
 // console.log("_______________________________");
 
