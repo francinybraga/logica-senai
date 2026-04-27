@@ -4,7 +4,6 @@
 // Instruções: resolva cada desafio no espaço indicado.
 // ============================================================
 
-
 // ------------------------------------------------------------
 // DESAFIO 1 – Progressão de saldo bancário
 // ------------------------------------------------------------
@@ -24,24 +23,23 @@
 // d) Armazene cada mês como objeto { mes, saldo } em um array e exiba com console.table().
 
 // → Seu código aqui:
-let readline = require('readline-sync')
-let saldoInicial = readline.questionFloat("Digite o saldo inicial: ")
-let saldoOriginal = saldoInicial
-let taxaJurosM = readline.questionFloat("Digite a taxa de juros: ")
-let meses = readline.questionInt("Digite o numero de meses: ")
-let saldoFinal = 0
+let readline = require("readline-sync");
+let saldoInicial = readline.questionFloat("Digite o saldo inicial: ");
+let saldoOriginal = saldoInicial;
+let taxaJurosM = readline.questionFloat("Digite a taxa de juros: ");
+let meses = readline.questionInt("Digite o numero de meses: ");
+let saldoFinal = 0;
 for (let i = 1; i <= meses; i++) {
-    saldoInicial = saldoInicial * (1 + taxaJurosM / 100)
-    saldoFinal += saldoInicial
-    console.log(`Mês ${i}:  R$ ${saldoInicial.toFixed(2)}`)
+  saldoInicial = saldoInicial * (1 + taxaJurosM / 100);
+  saldoFinal += saldoInicial;
+  console.log(`Mês ${i}:  R$ ${saldoInicial.toFixed(2)}`);
 }
-let lucro = saldoInicial - saldoOriginal
-console.log(`O saldo total é ${Number(saldoInicial.toFixed(2))} e o lucro obtido é ${Number(lucro.toFixed(2))}`)
-
-
+let lucro = saldoInicial - saldoOriginal;
+console.log(
+  `O saldo total é ${Number(saldoInicial.toFixed(2))} e o lucro obtido é ${Number(lucro.toFixed(2))}`,
+);
 
 console.log("_______________________________");
-
 
 // ------------------------------------------------------------
 // DESAFIO 2 – Cadastro e relatório de alunos
@@ -66,10 +64,39 @@ console.log("_______________________________");
 // f) Exiba o array com console.table().
 
 // → Seu código aqui:
-let alunosCadastrados = 
+let cadastro = readline.questionInt("Quantos alunos serão cadastrados?: ");
+let situacao = "";
+let alunos = [];
+for (let i = 1; i <= cadastro; i++) {
+  let nome = readline.question("Digite o nome do aluno: ");
+  let nota1 = readline.questionFloat("Digite a primeira nota: ");
+  let nota2 = readline.questionFloat("Digite a segunda nota: ");
+  let nota3 = readline.questionFloat("Digite a terceira nota: ");
+  let notas = [nota1, nota2, nota3];
+  let media = (nota1 + nota2 + nota3) / 3;
+  if (media >= 7) {
+    console.log("Aprovado");
+    situacao = "Aprovado";
+  } else if (media >= 5 && media < 7) {
+    console.log("Recuperacao");
+    situacao = "Recuperacao";
+  } else {
+    console.log("Reprovado");
+    situacao = "Reprovado";
+  }
+  let aluno = { nome: nome, nota: notas, media: media, situacao: situacao };
+  console.log(`${aluno.nome} | Média: ${Number(media).toFixed(2)} | ${situacao}`);
+  alunos.push(aluno);
+}
+let soma = 0;
+
+for (let aluno of alunos) {
+  soma += aluno.media;
+}
+let mediaGeral = soma / alunos.length;
+console.log(`A Média geral da turma é: ${Number(mediaGeral).toFixed(2)}`);
 
 console.log("_______________________________");
-
 
 // ------------------------------------------------------------
 // DESAFIO 3 – Jogo de adivinhar o número
@@ -92,9 +119,7 @@ console.log("_______________________________");
 
 // → Seu código aqui:
 
-
 console.log("_______________________________");
-
 
 // ------------------------------------------------------------
 // DESAFIO 4 – Análise de vendas mensais
@@ -117,6 +142,5 @@ console.log("_______________________________");
 // d) Exiba o array de objetos { mes, venda, situacao } com console.table().
 
 // → Seu código aqui:
-
 
 console.log("_______________________________");
