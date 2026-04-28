@@ -24,20 +24,20 @@
 
 // → Seu código aqui:
 let readline = require("readline-sync");
-let saldoInicial = readline.questionFloat("Digite o saldo inicial: ");
-let saldoOriginal = saldoInicial;
-let taxaJurosM = readline.questionFloat("Digite a taxa de juros: ");
-let meses = readline.questionInt("Digite o numero de meses: ");
-let saldoFinal = 0;
-for (let i = 1; i <= meses; i++) {
-  saldoInicial = saldoInicial * (1 + taxaJurosM / 100);
-  saldoFinal += saldoInicial;
-  console.log(`Mês ${i}:  R$ ${saldoInicial.toFixed(2)}`);
-}
-let lucro = saldoInicial - saldoOriginal;
-console.log(
-  `O saldo total é ${Number(saldoInicial.toFixed(2))} e o lucro obtido é ${Number(lucro.toFixed(2))}`,
-);
+// let saldoInicial = readline.questionFloat("Digite o saldo inicial: ");
+// let saldoOriginal = saldoInicial;
+// let taxaJurosM = readline.questionFloat("Digite a taxa de juros: ");
+// let meses = readline.questionInt("Digite o numero de meses: ");
+// let saldoFinal = 0;
+// for (let i = 1; i <= meses; i++) {
+//   saldoInicial = saldoInicial * (1 + taxaJurosM / 100);
+//   saldoFinal += saldoInicial;
+//   console.log(`Mês ${i}:  R$ ${saldoInicial.toFixed(2)}`);
+// }
+// let lucro = saldoInicial - saldoOriginal;
+// console.log(
+//   `O saldo total é ${Number(saldoInicial.toFixed(2))} e o lucro obtido é ${Number(lucro.toFixed(2))}`,
+// );
 
 console.log("_______________________________");
 
@@ -64,37 +64,61 @@ console.log("_______________________________");
 // f) Exiba o array com console.table().
 
 // → Seu código aqui:
-let cadastro = readline.questionInt("Quantos alunos serão cadastrados?: ");
-let situacao = "";
-let alunos = [];
-for (let i = 1; i <= cadastro; i++) {
-  let nome = readline.question("Digite o nome do aluno: ");
-  let nota1 = readline.questionFloat("Digite a primeira nota: ");
-  let nota2 = readline.questionFloat("Digite a segunda nota: ");
-  let nota3 = readline.questionFloat("Digite a terceira nota: ");
-  let notas = [nota1, nota2, nota3];
-  let media = (nota1 + nota2 + nota3) / 3;
-  if (media >= 7) {
-    console.log("Aprovado");
-    situacao = "Aprovado";
-  } else if (media >= 5 && media < 7) {
-    console.log("Recuperacao");
-    situacao = "Recuperacao";
-  } else {
-    console.log("Reprovado");
-    situacao = "Reprovado";
-  }
-  let aluno = { nome: nome, nota: notas, media: media, situacao: situacao };
-  console.log(`${aluno.nome} | Média: ${Number(media).toFixed(2)} | ${situacao}`);
-  alunos.push(aluno);
-}
-let soma = 0;
+// let cadastro = readline.questionInt("Quantos alunos serão cadastrados?: ");
+// let situacao = "";
+// let alunos = [];
+// let contadorA = 0
+// let contadorR = 0
+// let contadorRp = 0
+// for (let i = 1; i <= cadastro; i++) {
+//   let nome = readline.question("Digite o nome do aluno: ");
+//   let nota1 = readline.questionFloat("Digite a primeira nota: ");
+//   let nota2 = readline.questionFloat("Digite a segunda nota: ");
+//   let nota3 = readline.questionFloat("Digite a terceira nota: ");
+//   let notas = [nota1, nota2, nota3];
+//   let media = (nota1 + nota2 + nota3) / 3;
+//   if (media >= 7) {
+//     console.log("Aprovado");
+//     situacao = "Aprovado";
+//     contadorA++
+//   } else if (media >= 5 && media < 7) {
+//     console.log("Recuperacao");
+//     situacao = "Recuperacao";
+//     contadorR++
+//   } else {
+//     console.log("Reprovado");
+//     situacao = "Reprovado";
+//     contadorRp++
+//   }
+//   let aluno = { nome: nome, nota: notas, media: media, situacao: situacao };
+//   console.log(`${aluno.nome} | Média: ${Number(media).toFixed(2)} | ${situacao}`);
+//   alunos.push(aluno);
+// }
+// let soma = 0;
 
-for (let aluno of alunos) {
-  soma += aluno.media;
-}
-let mediaGeral = soma / alunos.length;
-console.log(`A Média geral da turma é: ${Number(mediaGeral).toFixed(2)}`);
+// for (let aluno of alunos) {
+//   soma += aluno.media;
+// }
+// let mediaGeral = soma / alunos.length;
+// console.log(`A Média geral da turma é: ${Number(mediaGeral).toFixed(2)}`);
+// let maior = alunos[0]
+// let menor = alunos[0]
+// for (let j = 1; j < alunos.length;j ++){
+//     if(alunos[j].media > maior.media){
+//       maior = alunos[j]
+//     }
+//     if (alunos[j].media < menor.media) {
+//       menor = alunos[j];
+//     }
+// }
+
+// console.log("menor media")
+// console.log(menor.nome)
+// console.log("maior media")
+// console.log(maior.nome)
+// console.log(`Quantidade de aprovados:${contadorA}
+// Quantidade em recuperação: ${contadorR}
+// Quantidade reprovados: ${contadorRp}`)
 
 console.log("_______________________________");
 
@@ -118,29 +142,53 @@ console.log("_______________________________");
 //    - Resultado: "Vitória" ou "Derrota"
 
 // → Seu código aqui:
+let min = 1
+let max = 100
+let numero = Math.floor(Math.random(1) * (max - min)) + min
+let tentativa = 7
+let resultado = ""
+
+for (let i = 0; i < tentativa; i++) {
+  let palpite = readline.questionInt(`Digite um palpite: `)
+  if (palpite > numero) {
+    console.log("Muito alto!")
+  } else if (palpite < numero) {
+    console.log("Muito baixo!")
+  } elseu if (palpite === numero) {
+    console.log(`parabens! Acertou em ${i} tentativas`)
+    resultado = "Vitoria"
+  } else {
+    console.log(`Game over! O número era ${numero}.`)
+    resultado = "Derrota"
+  }
+}
+console.log(`O numero sorteado é: ${numero}`);
+console.log(`Você usou ${tentativa} tentativas!`)
+console.log(resultado)
+
 
 console.log("_______________________________");
 
-// ------------------------------------------------------------
-// DESAFIO 4 – Análise de vendas mensais
-// ------------------------------------------------------------
-// a) Declare o array de vendas mensais (Jan a Dez):
-//    const vendas = [12500, 9800, 15200, 11000, 13750, 8900,
-//                    17300, 14600, 10200, 16800, 19500, 22000];
-// b) Usando fors, calcule e exiba:
-//    - Total de vendas no ano
-//    - Média mensal
-//    - Mês com maior venda (nome do mês e valor)
-//    - Mês com menor venda (nome do mês e valor)
-//    - Quantos meses ficaram acima da média
-//    - Quantos meses ficaram abaixo da média
-// c) Exiba um relatório mês a mês indicando se ficou acima ou abaixo da média:
-//    "Janeiro:   R$ 12.500,00 – Abaixo da média"
-//    "Fevereiro: R$  9.800,00 – Abaixo da média"
-//    ...
-//    Dica: use um array com os nomes dos meses para exibir o nome correto.
-// d) Exiba o array de objetos { mes, venda, situacao } com console.table().
+  // ------------------------------------------------------------
+  // DESAFIO 4 – Análise de vendas mensais
+  // ------------------------------------------------------------
+  // a) Declare o array de vendas mensais (Jan a Dez):
+  //    const vendas = [12500, 9800, 15200, 11000, 13750, 8900,
+  //                    17300, 14600, 10200, 16800, 19500, 22000];
+  // b) Usando fors, calcule e exiba:
+  //    - Total de vendas no ano
+  //    - Média mensal
+  //    - Mês com maior venda (nome do mês e valor)
+  //    - Mês com menor venda (nome do mês e valor)
+  //    - Quantos meses ficaram acima da média
+  //    - Quantos meses ficaram abaixo da média
+  // c) Exiba um relatório mês a mês indicando se ficou acima ou abaixo da média:
+  //    "Janeiro:   R$ 12.500,00 – Abaixo da média"
+  //    "Fevereiro: R$  9.800,00 – Abaixo da média"
+  //    ...
+  //    Dica: use um array com os nomes dos meses para exibir o nome correto.
+  // d) Exiba o array de objetos { mes, venda, situacao } com console.table().
 
-// → Seu código aqui:
+  // → Seu código aqui:
 
-console.log("_______________________________");
+
