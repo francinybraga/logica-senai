@@ -154,7 +154,7 @@ for (let i = 0; i < tentativa; i++) {
     console.log("Muito alto!")
   } else if (palpite < numero) {
     console.log("Muito baixo!")
-  } elseu if (palpite === numero) {
+  } else if (palpite === numero) {
     console.log(`parabens! Acertou em ${i} tentativas`)
     resultado = "Vitoria"
   } else {
