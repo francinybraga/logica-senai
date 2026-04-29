@@ -67,117 +67,123 @@ console.log("_______________________________");
 
 // → Seu código do MODO 1 aqui:
 
-if (modo === 1) {
+switch (modo) {
+    case 1:
+        let secreto = Math.floor(Math.random() * 100) + 1;
+        let venceu = false;
+        let tentativasUsadas = 0;
 
-    let secreto = Math.floor(Math.random() * 100) + 1;
-    let venceu = false;
-    let tentativasUsadas = 0;
+        console.log("\nPensei em um número entre 1 e 100!");
+        console.log("Você tem 7 tentativas para acertar.");
 
-    console.log("\nPensei em um número entre 1 e 100!");
-    console.log("Você tem 7 tentativas para acertar.");
+        for (let i = 1; i <= MAX_TENTATIVAS; i++) {
 
-    for (let i = 1; i <= MAX_TENTATIVAS; i++) {
+            let palpite = lerTeclado.questionInt(`Tentativa ${i}: `);
+            tentativasUsadas = i;
 
-        let palpite = lerTeclado.questionInt(`Tentativa ${i}: `);
-        tentativasUsadas = i;
+            if (palpite === secreto) {
+                console.log(`Parabéns! Você acertou em ${i} tentativa(s)!`);
+                venceu = true;
+                break;
+            }
 
-        if (palpite === secreto) {
-            console.log(`Parabéns! Você acertou em ${i} tentativa(s)!`);
-            venceu = true;
-            break;
+            if (palpite > secreto) {
+                console.log("Muito alto! Tente um número menor.");
+            } else {
+                console.log("Muito baixo! Tente um número maior.");
+            }
+
+            console.log(`Restam ${MAX_TENTATIVAS - i} tentativa(s).`);
         }
 
-        if (palpite > secreto) {
-            console.log("Muito alto! Tente um número menor.");
-        } else {
-            console.log("Muito baixo! Tente um número maior.");
+        if (!venceu) {
+            console.log(`Fim de jogo! O número era ${secreto}.`);
         }
 
-        console.log(`Restam ${MAX_TENTATIVAS - i} tentativa(s).`);
-    }
+        console.log("===== RESUMO =====");
+        console.log(`Número secreto: ${secreto}`);
+        console.log(`Tentativas usadas: ${tentativasUsadas}`);
+        console.log(`Resultado: ${venceu ? "Vitória" : "Derrota"}`);
+        break
 
-    if (!venceu) {
-        console.log(`Fim de jogo! O número era ${secreto}.`);
-    }
 
-    console.log("===== RESUMO =====");
-    console.log(`Número secreto: ${secreto}`);
-    console.log(`Tentativas usadas: ${tentativasUsadas}`);
-    console.log(`Resultado: ${venceu ? "Vitória" : "Derrota"}`);
+
+    // ============================================================
+    // MODO 2 – Jogador pensa, computador adivinha
+    // ============================================================
+    //
+    // Instruções para implementação do Modo 2:
+    //
+    // PASSO 1 – Instrua o jogador a digitar um número inteiro entre 1 e 100;
+    // PASSO 2 – Inicialize o intervalo de busca:
+    //           let min = NUM_MIN;
+    //           let max = NUM_MAX;
+    // PASSO 3 – Use um for para as tentativas.
+    //   a) Calcule o palpite do computador: meio do intervalo
+    //   b) Exiba: "Tentativa <i>: Meu palpite é <palpite>!"
+    //   c) Pergunte ao jogador o resultado com questionInt():
+    //        "1 – Acertei | 2 – Muito alto | 3 – Muito baixo"
+    //   d) De acordo com a resposta, busque pelo meio do novo intervalo.
+    // PASSO 4 – Se o computador acertar, exiba uma mensagem de vitória, exiba quantas tentativas o computador usou e finalize o jogo.
+    // PASSO 5 – Se o computador não acertar, exiba uma mensagem de derrota e o número que o jogador estava pensando.
+
+    // Implemente seu código abaixo:
+    case 2:
+
+        console.log("Pense em um número entre 1 e 100.");
+        console.log("Não digite o número, apenas responda:");
+        console.log("1 = Acertei");
+        console.log("2 = Muito alto");
+        console.log("3 = Muito baixo");
+
+        let min = NUM_MIN;
+        let max = NUM_MAX;
+        let acertou = false;
+
+        for (let i = 1; i <= MAX_TENTATIVAS; i++) {
+
+            let palpite = 
+            
+
+
+            
+
+            console.log(`Tentativa ${i}: Meu palpite é ${palpite}!`);
+
+            let resposta = lerTeclado.questionInt(
+                "1 = Acertei | 2 = Muito alto | 3 = Muito baixo: "
+            );
+
+            if (resposta === 1) {
+                console.log(`Venci! Acertei em ${i} tentativa(s)!`);
+                acertou = true;
+                break;
+            }
+
+            else if (resposta === 2) {
+                max = palpite - 1;
+            }
+
+            else if (resposta === 3) {
+                min = palpite + 1;
+            }
+
+            else {
+                console.log("Resposta inválida!");
+                i--;
+            }
+        }
+
+        if (!acertou) {
+            console.log("Não consegui adivinhar em 7 tentativas.");
+        }
+        break
+    case 3:
+        console.log('Saindo...')
+        break
+    default:
+        console.log("Opção inválida.");
+        break
 }
 
 
-
-// ============================================================
-// MODO 2 – Jogador pensa, computador adivinha
-// ============================================================
-//
-// Instruções para implementação do Modo 2:
-//
-// PASSO 1 – Instrua o jogador a digitar um número inteiro entre 1 e 100;
-// PASSO 2 – Inicialize o intervalo de busca:
-//           let min = NUM_MIN;
-//           let max = NUM_MAX;
-// PASSO 3 – Use um for para as tentativas.
-//   a) Calcule o palpite do computador: meio do intervalo
-//   b) Exiba: "Tentativa <i>: Meu palpite é <palpite>!"
-//   c) Pergunte ao jogador o resultado com questionInt():
-//        "1 – Acertei | 2 – Muito alto | 3 – Muito baixo"
-//   d) De acordo com a resposta, busque pelo meio do novo intervalo.
-// PASSO 4 – Se o computador acertar, exiba uma mensagem de vitória, exiba quantas tentativas o computador usou e finalize o jogo.
-// PASSO 5 – Se o computador não acertar, exiba uma mensagem de derrota e o número que o jogador estava pensando.
-
-// Implemente seu código abaixo:
-else if (modo === 2) {
-
-    console.log("Pense em um número entre 1 e 100.");
-    console.log("Não digite o número, apenas responda:");
-    console.log("1 = Acertei");
-    console.log("2 = Muito alto");
-    console.log("3 = Muito baixo");
-
-    let min = NUM_MIN;
-    let max = NUM_MAX;
-    let acertou = false;
-
-    for (let i = 1; i <= MAX_TENTATIVAS; i++) {
-
-        let palpite = Math.floor((min + max) / 2);
-
-        console.log(`Tentativa ${i}: Meu palpite é ${palpite}!`);
-
-        let resposta = lerTeclado.questionInt(
-            "1 = Acertei | 2 = Muito alto | 3 = Muito baixo: "
-        );
-
-        if (resposta === 1) {
-            console.log(`\nVenci! Acertei em ${i} tentativa(s)!`);
-            acertou = true;
-            break;
-        }
-
-        else if (resposta === 2) {
-            max = palpite - 1;
-        }
-
-        else if (resposta === 3) {
-            min = palpite + 1;
-        }
-
-        else {
-            console.log("Resposta inválida!");
-            i--;
-        }
-    }
-
-    if (!acertou) {
-        console.log("Não consegui adivinhar em 7 tentativas.");
-    }
-}
-else if (modo === 3) {
-    console.log("Encerrando jogo...");
-}
-
-else {
-    console.log("Opção inválida.");
-}
