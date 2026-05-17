@@ -173,8 +173,8 @@ console.log("_______________________________");
   // DESAFIO 4 – Análise de vendas mensais
   // ------------------------------------------------------------
   // a) Declare o array de vendas mensais (Jan a Dez):
-  //    const vendas = [12500, 9800, 15200, 11000, 13750, 8900,
-  //                    17300, 14600, 10200, 16800, 19500, 22000];
+     const vendas = [12500, 9800, 15200, 11000, 13750, 8900,
+                     17300, 14600, 10200, 16800, 19500, 22000];
   // b) Usando fors, calcule e exiba:
   //    - Total de vendas no ano
   //    - Média mensal
@@ -190,5 +190,5 @@ console.log("_______________________________");
   // d) Exiba o array de objetos { mes, venda, situacao } com console.table().
 
   // → Seu código aqui:
-
+let mes = ["jan","fev","mar", "abr", "mai", "jun", "jul"," ago", "set", "out", "nov", "dez"]
 
