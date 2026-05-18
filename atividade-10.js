@@ -220,7 +220,7 @@ console.log("_______________________________");
 
 // → Seu código aqui:
 // let saldo = 1000
-// let rodada = 1
+// let rodada = 0
 // let saque = 0
 // while (saldo > 0 && rodada < 10) {
 //     saque = Math.floor(Math.random() * 151) + 50
@@ -230,10 +230,10 @@ console.log("_______________________________");
 //     }
 //     else {
 //         saldo -= saque
-//         console.log(`Rodada ${rodada}: sacou R$ ${saque} | Novo saldo: R$ ${saldo}`)
-
+//         console.log(`Rodada ${rodada  + 1}: sacou R$ ${saque} | Novo saldo: R$ ${saldo}`)
+//         rodada++
 //     }
-//     rodada++
+    
 
 // } console.log(`Saldo restante ${saldo} | Total de rodadas ${rodada}`)
 

@@ -270,35 +270,35 @@ console.log("_______________________________");
 // g) Chame o professor para realizar alguns testes 🫡
 
 // → Seu código aqui:
-let a = lerTeclado.questionFloat("Digite um número: ")
-let b = lerTeclado.questionFloat("Digite um número: ")
-console.log("Escolha uma operacao")
-let operacao = lerTeclado.questionFloat("1 – Soma | 2 – Subtracaoo | 3 – Multiplicacao | 4 – Divisao")
-console.log(operacao)
-let resultado
-let simbolo
-let calculadora = {
-    numero1: a,
-    numero2: b,
-    operacao: operacao,
-    simbolo: simbolo
-}
+// let a = lerTeclado.questionFloat("Digite um número: ")
+// let b = lerTeclado.questionFloat("Digite um número: ")
+// console.log("Escolha uma operacao")
+// let operacao = lerTeclado.questionFloat("1 – Soma | 2 – Subtracaoo | 3 – Multiplicacao | 4 – Divisao")
+// console.log(operacao)
+// let resultado
+// let simbolo
+// let calculadora = {
+//     numero1: a,
+//     numero2: b,
+//     operacao: operacao,
+//     simbolo: simbolo
+// }
 
-if (operacao === 1){
-    resultado = a + b
-    simbolo = "+"
-} else if(operacao === 2){
-    resultado = a - b
-    simbolo = "-"
-} else if (operacao === 3){
-    resultado = a*b
-    simbolo = "*"
-} else if ( a === 0 || b === 0){
-    console.log("Divisão indisponível")
-} else { 
-    simbolo = "/"
-    resultado = a/b
-} 
+// if (operacao === 1){
+//     resultado = a + b
+//     simbolo = "+"
+// } else if(operacao === 2){
+//     resultado = a - b
+//     simbolo = "-"
+// } else if (operacao === 3){
+//     resultado = a*b
+//     simbolo = "*"
+// } else if ( a === 0 || b === 0){
+//     console.log("Divisão indisponível")
+// } else { 
+//     simbolo = "/"
+//     resultado = a/b
+// } 
 
 console.log(`${a} ${simbolo} ${b} = ${resultado}`)
 console.log("_______________________________");

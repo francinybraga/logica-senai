@@ -148,20 +148,20 @@ const temperaturas = [28, 15, 32, 9, 21, 37, 14, 25];
 // //    "Menor temperatura: <menor>°C"
 
 // // → Seu código aqui:
-let maior = temperaturas[0];
-let menor = temperaturas[0];
-for (let i = 0; i < temperaturas.length; i++) {
-  if (temperaturas[i] > maior) {
-    maior = temperaturas[i];
-  }
+// let maior = temperaturas[0];
+// let menor = temperaturas[0];
+// for (let i = 0; i < temperaturas.length; i++) {
+//   if (temperaturas[i] > maior) {
+//     maior = temperaturas[i];
+//   }
 
-  if (temperaturas[i] < menor) {
-    menor = temperaturas[i];
-  }
-}
-console.log(`
-Maior temperatura: ${maior}°C"
-Menor temperatura: ${menor}°C`);
+//   if (temperaturas[i] < menor) {
+//     menor = temperaturas[i];
+//   }
+// }
+// console.log(`
+// Maior temperatura: ${maior}°C"
+// Menor temperatura: ${menor}°C`);
 
 // console.log("_______________________________");
 

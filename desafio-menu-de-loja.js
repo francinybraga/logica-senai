@@ -47,77 +47,92 @@ const cliente = {
 // INÍCIO
 // ============================================================
 
-console.log("╔════════════════════════════╗");
-console.log("║        LOJA LOJINHA        ║");
-console.log("╚════════════════════════════╝");
-
 // → Seu código aqui:
-let escolha = lerTeclado.questionInt(
-  "1) Visualizar o catalogo | 2) Comprar itens do catalogo | 3) Vender itens do inventário | 4) Visualizar seus itens ",
-);
-switch (escolha) {
-  case 1:
-    console.log(`
-      ==========================================
-      ID | NOME               | PRECO | ESTOQUE
-      ==========================================
-      1  | Espada de Ferro    | 80    | 2
-      2  | Escudo de Madeira  | 50    | 5 
-      3  | Poção de Cura      | 30    | 10
-      4  | Arco Longo         | 65    | 3
-      5  | Botas Velozes      | 45    | 4
-      6  | Batata             | 15    | 20  
-      7  | Cajado Mágico      | 95    | 1
-      8  | Armadura de Couro  | 85    | 2
-      `);
-    break;
-  case 2:
-    console.log(`
-      ==========================================
-      ID | NOME               | PRECO | ESTOQUE
-      ==========================================
-      1  | Espada de Ferro    | 80    | 2
-      2  | Escudo de Madeira  | 50    | 5 
-      3  | Poção de Cura      | 30    | 10
-      4  | Arco Longo         | 65    | 3
-      5  | Botas Velozes      | 45    | 4
-      6  | Batata             | 15    | 20  
-      7  | Cajado Mágico      | 95    | 1
-      8  | Armadura de Couro  | 85    | 2
-      `);
-    let comprar = lerTeclado.questionInt(
-      "Digite o id do produto que deseja comprar: ",
-    );
-    if (comprar > 8 || comprar < 1) {
-      console.log("Numero invalido. Preste atenção! ");
-    } else {
-      for (let i = 0; i < catalogo.length; i++) {
-        if (catalogo[i].id === comprar) {
-          if (cliente.moedas < catalogo[i].preco) {
-            console.log("Moedas insuficiente!");
+let escolher = 0;
+do {
+  console.log(`
+  Bem vindo, ${cliente.nome}! 
+╔════════════════════════════╗
+║        LOJA LOJINHA        ║    
+╚════════════════════════════╝
+1) Vizualizar catalogo
+2) Comprar itens do catalogo   
+3) Vender itens do inventário
+4) Visualizar seus itens
+0) Sair      
+    `);
+  escolher = lerTeclado.questionInt("Digite uma opcao para executar: ");
+  switch (escolher) {
+    case 1:
+      console.table(catalogo);
+      break;
+    case 2:
+      let comprar = lerTeclado.questionInt(
+        "Qual item do catalogo deseja comprar? ",
+      );
+      while (comprar != 0) {
+        if (comprar > catalogo.length || comprar < 0) {
+          console.log("Escolha uma opcao valida!");
+          break;
+        } else {
+          if (
+            cliente.moedas >= catalogo[comprar - 1].preco &&
+            catalogo[comprar - 1].estoque > 0
+          ) {
+            cliente.moedas -= catalogo[comprar - 1].preco;
+            catalogo[comprar - 1].estoque--;
+            cliente.inventario.push(catalogo[comprar - 1].nome);
+            console.log(
+              `Total de moedas restantes: ${cliente.moedas}, Total de estoque do ${catalogo[comprar - 1].nome} é ${catalogo[comprar - 1].estoque}`,
+            );
+          } else {
+            console.log("Moedas insuficiente ou estoque vazio");
           }
-          if (catalogo[i].estoque === 0) {
-            console.log("Estoque insuficiente!");
-          }
-          catalogo[i].estoque -= 1;
-          cliente.moedas -= catalogo[i].preco;
-          cliente.inventario.push(catalogo[i]);
-          console.log(`Estoque atual: ${catalogo[i].estoque}`)
-          console.log(`Moedas atual: ${cliente.moedas}`)
+          comprar = lerTeclado.questionInt(
+            "Qual item do catalogo deseja comprar? ",
+          );
         }
       }
-      
-    
-    console.log(cliente);
-    
-    }
-    break;
-  case 3:
-    break;
-  case 4:
-    break;
-  case 5:
-    break;
-  case 6:
-    break;
-}
+      break;
+    case 3:
+      console.log("ITENS PARA VENDER");
+      console.table(cliente.inventario);
+      let vender = lerTeclado.questionInt("Qual item deseja vender? ");
+      while (vender != 0) {
+        if (vender > 0 && vender <= cliente.inventario.length) {
+          let indice = vender - 1;
+          let nomeItem = cliente.inventario[indice];
+          for (let i = 0; i < catalogo.length; i++) {
+            if (nomeItem == catalogo[i].nome) {
+              cliente.moedas += Math.round(catalogo[i].preco * 0.7);
+              catalogo[i].estoque++;
+            }
+          }
+          cliente.inventario.splice(indice, 1);
+          console.log("Item vendido com sucesso!");
+        } else {
+          console.log("Escolha invalida.");
+        }
+        console.log(`Suas moedas ${cliente.moedas}`);
+        console.log(`Seu inventário ${cliente.inventario}`);
+        console.table(cliente.inventario);
+        vender = lerTeclado.questionInt("Qual item deseja vender? ");
+      }
+      break;
+    case 4:
+      console.table(cliente.inventario);
+      break;
+    case 0:
+      console.log(`
+========= RESUMO FINAL =========
+Nome: ${cliente.nome}
+Moedas restantes: ${cliente.moedas}
+Itens no inventario:
+`);
+      console.table(cliente.inventario);
+      break;
+    default:
+      console.log("Escolha uma opcao valida!");
+      break;
+  }
+} while (escolher != 0);
