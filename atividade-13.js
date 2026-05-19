@@ -105,7 +105,7 @@ console.log("Soma por COLUNA:");
 for (let j = 0; j < m[0].length; j++) {
   let somaColuna = 0;
   for (let i = 0; i < m.length; i++) {
-    somaColuna += m[i][j];
+    somaColuna += m[i][j]; 
   }
   console.log(`Coluna ${j}: ${somaColuna}`);
 }
