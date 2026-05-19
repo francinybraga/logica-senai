@@ -57,28 +57,35 @@ console.log("_______________________________");
 // EXERCÍCIO 3 – Maior e menor valor
 // ------------------------------------------------------------
 // a) Utilizando a matriz:
- const m = [
-   [12,  7, 25],
-   [ 3, 18,  9],
-   [31, 14, 22],
- ];
+const m = [
+  [12, 7, 25],
+  [3, 18, 9],
+  [31, 14, 22],
+];
 // b) Usando for aninhado, encontre o MAIOR e o MENOR valor da matriz.
 // c) Exiba também a posição (linha, coluna) onde cada um está.
 
 // → Seu código aqui:
-// let maior = m[0][0]
-// let menor = m[0][0]
-// for(let i = 0; i < m.length; i++){
-//   for(let j = 0; i < m[i].length; j++){
-//     if(m[i].length > maior){
-//       maior = m[i]
-//     } else if(m[i].length < menor){
-//       menor = m[i]
-//     }
-//   }
-// }
-// console.log(maior)
-// console.log(menor)
+let ultimoValor = m[m.length - 1][m[0].length - 1]
+console.log(`Esse é o ultimo valor: ${ultimoValor}`)
+let maior = m[0][0]
+let menor = m[0][0]
+let localMaior = null
+let localMenor = null
+for (let i = 0; i < m.length; i++) {
+  for (let j = 0; j < m[i].length; j++) {
+    if (m[i][j] > maior) {
+      maior = m[i][j]
+      localMaior = `Linha ${i} | Coluna ${j}`
+    } else if (m[i][j] < menor) {
+      menor = m[i][j]
+      localMenor = `Linha ${i} | Coluna ${j}`
+    }
+  }
+
+}
+console.log(`Numero maior: ${maior} | ${localMaior}`)
+console.log(`Numero menor: ${menor} | ${localMenor}`)
 
 console.log("_______________________________");
 
@@ -92,23 +99,23 @@ console.log("_______________________________");
 // d) Exiba a soma da DIAGONAL principal (m[i][i]).
 
 // → Seu código aqui:
-console.log("Soma por LINHA:");
-for (let i = 0; i < m.length; i++) {
-  let somaLinha = 0;
-  for (let j = 0; j < m[i].length; j++) {
-    somaLinha += m[i][j];
-  }
-  console.log(`Linha ${i}: ${somaLinha}`);
-}
+// console.log("Soma por LINHA:");
+// for (let i = 0; i < m.length; i++) {
+//   let somaLinha = 0;
+//   for (let j = 0; j < m[i].length; j++) {
+//     somaLinha += m[i][j];
+//   }
+//   console.log(`Linha ${i}: ${somaLinha}`);
+// }
 
-console.log("Soma por COLUNA:");
-for (let j = 0; j < m[0].length; j++) {
-  let somaColuna = 0;
-  for (let i = 0; i < m.length; i++) {
-    somaColuna += m[i][j]; 
-  }
-  console.log(`Coluna ${j}: ${somaColuna}`);
-}
+// console.log("Soma por COLUNA:");
+// for (let j = 0; j < m[0].length; j++) {
+//   let somaColuna = 0;
+//   for (let i = 0; i < m.length; i++) {
+//     somaColuna += m[i][j]; 
+//   }
+//   console.log(`Coluna ${j}: ${somaColuna}`);
+// }
 
 
 
@@ -124,6 +131,19 @@ console.log("_______________________________");
 // c) Exiba a matriz final com console.table().
 
 // → Seu código aqui:
+let lerTeclado = require('readline-sync')
+let linhas = lerTeclado.questionInt("DIgite quantas linhas terá a matriz: ")
+let colunas = lerTeclado.questionInt("Digite quantas colunas terá a matriz: ")
+let matriz = []
+
+for (let i = 0; i < linhas; i++) {
+  matriz.push([])
+  for (let j = 0; j < colunas; j++) {
+    // matriz[i][j] = lerTeclado.questionInt(`Digite m[${i}][${j}]: `)
+    matriz[i].push(lerTeclado.questionInt(`Digite m[${i}][${j}]: `))
+  }
+}
+console.table(matriz)
 
 
 console.log("_______________________________");
