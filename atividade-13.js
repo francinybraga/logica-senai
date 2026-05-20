@@ -7,21 +7,19 @@
 // EXERCÍCIO 1 – Lendo uma matriz
 // ------------------------------------------------------------
 // a) Declare a matriz:
-//  const m = [
-//    [10, 20, 30],
-//    [40, 50, 60],
-//    [70, 80, 90],
-//  ];
+ const moot = [
+   [10, 20, 30],
+   [40, 50, 60],
+   [70, 80, 90],
+ ];
 // b) Exiba: número de linhas e número de colunas.
 // c) Exiba o elemento central (m[1][1]).
 // d) Exiba o canto inferior direito (use .length).
 
 // → Seu código aqui:
-// console.log(`Quantidade de linhas: ${m.length}`)
-// console.log(`Quantidade de colunas: ${m[0].length}`)
-
-
-
+console.log(`Quantidade de linhas: ${moot.length}`)
+console.log(`Quantidade de colunas: ${moot[0].length}`)
+console.log(moot[moot.length - 1][moot[0].length - 1])
 
 console.log("_______________________________");
 
@@ -30,7 +28,7 @@ console.log("_______________________________");
 // EXERCÍCIO 2 – Percorrendo com for aninhado
 // ------------------------------------------------------------
 // a) Declare a matriz:
-// const m = [
+// const moo = [
 //   [1, 2, 3, 4],
 //   [5, 6, 7, 8],
 //   [9, 10, 11, 12],
@@ -41,9 +39,10 @@ console.log("_______________________________");
 
 // // → Seu código aqui:
 // let soma = 0;
-// for (let i = 0; i < m.length; i++) {
-//   for (let j = 0; j < m[i].length; j++) {
-//     soma += m[i][j];
+// for (let i = 0; i < moo.length; i++) {
+//   for (let j = 0; j < moo[i].length; j++) {
+//     soma += moo[i][j];
+//     console.log(`moo[${i}][${j}] = ${soma}`)
 //   }
 // }
 // console.log(`Soma de todos os elementos: ${soma}`);
