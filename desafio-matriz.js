@@ -2,7 +2,6 @@
 //   DESAFIOS – Matriz
 // ============================================================
 
-
 // ------------------------------------------------------------
 // DESAFIO 1 – Jogo da velha simplificado
 // ------------------------------------------------------------
@@ -14,27 +13,42 @@
 // c) Não precisa verificar vencedor — apenas alternar X e O.
 
 // → Seu código aqui:
-let lerTeclado = require('readline-sync')
-let jogadas = 5
-let tabuleiro = [
-    ['-', '-', '-',],
-    ['-', '-', '-',],
-    ['-', '-', '-',]
-]
-console.log(tabuleiro)
-for (let i = 0; i < jogadas; i++) {
-    for (let j = 0; j < tabuleiro.length; j++) {
-        for (let k = 0; k < tabuleiro[0].length; k++) {
-            tabuleiro[j][k] = lerTeclado.question("Digite a posicao onde quer jogar: ")
-            console.log(tabuleiro)
-        }
-    }
-}
-
-console.log(tabuleiro)
+let lerTeclado = require("readline-sync");
+// let jogador = "X";
+// let tabuleiro = [
+//   ["-", "-", "-"],
+//   ["-", "-", "-"],
+//   ["-", "-", "-"],
+// ];
+// console.table(tabuleiro);
+// for (let i = 0; i < 5; i++) {
+//   let linha = lerTeclado.questionInt("Digite a linha: ");
+//   if (linha < 3 && linha > 0) {
+//     let coluna = lerTeclado.questionInt("Digite a coluna: ");
+//     if (coluna < 3 && coluna > 0) {
+//       if (tabuleiro[linha][coluna] === "-") {
+//         tabuleiro[linha][coluna] = jogador;
+//         console.table(tabuleiro);
+//         if (jogador === "X") {
+//           jogador = "O";
+//         } else {
+//           jogador = "X";
+//         }
+//       } else {
+//         console.log("Posicao ocupada");
+//         i--;
+//       }
+//     } else {
+//       console.log("Digite um numero valido.");
+//       i--
+//     }
+//   } else {
+//     console.log("Digite um numero valido.");
+//     i--
+//   }
+// }
 
 console.log("_______________________________");
-
 
 // ------------------------------------------------------------
 // DESAFIO 2 – Batalha naval simplificada
@@ -53,21 +67,64 @@ console.log("_______________________________");
 // f) Exiba o número total de tiros usados.
 
 // → Seu código aqui:
-
-
+let tabuleiro = [
+  { temNavio: false, atingida: false },
+  { temNavio: false, atingida: false },
+  { temNavio: false, atingida: false },
+  { temNavio: false, atingida: false },
+  { temNavio: false, atingida: false },
+  { temNavio: false, atingida: false },
+  { temNavio: false, atingida: false },
+  { temNavio: false, atingida: false },
+  { temNavio: false, atingida: false },
+  { temNavio: false, atingida: false },
+  { temNavio: false, atingida: false },
+  { temNavio: false, atingida: false },
+  { temNavio: false, atingida: false },
+  { temNavio: false, atingida: false },
+  { temNavio: false, atingida: false },
+  { temNavio: false, atingida: false },
+  { temNavio: false, atingida: false },
+  { temNavio: false, atingida: false },
+  { temNavio: false, atingida: false },
+  { temNavio: false, atingida: false },
+  { temNavio: false, atingida: false },
+  { temNavio: false, atingida: false },
+  { temNavio: false, atingida: false },
+  { temNavio: false, atingida: false },
+  { temNavio: false, atingida: false },
+];
+let navios = 0;
+while (navios < 5) {
+  let linha = Math.floor(Math.random() * 5);
+  let coluna = Math.floor(Math.random() * 5);
+  if (tabuleiro[linha][coluna].temNavio === false) {
+    tabuleiro[linha][coluna] = true;
+    navios++;
+  }
+}
+let acertou = false;
+while (!acertou) {
+  let linha = lerTeclado.questionInt("Digite o numero da linha:");
+  let coluna = lerTeclado.questionInt("Digite o numero da coluna:");
+  if (tabuleiro[linha][coluna].temNavio === false) {
+    console.log("Água...");
+  } else {
+    console.log("Acertou!");
+  }
+}
 console.log("_______________________________");
-
 
 // ------------------------------------------------------------
 // DESAFIO 3 – Boletim escolar com console.table
 // ------------------------------------------------------------
 // a) Utilizando:
 const turma = [
-    { nome: "Ana", notas: [8.0, 7.5, 9.0, 6.5] },
-    { nome: "Bruno", notas: [4.0, 5.5, 6.0, 5.0] },
-    { nome: "Carla", notas: [9.5, 9.0, 9.5, 10] },
-    { nome: "Diego", notas: [7.0, 6.5, 7.0, 8.5] },
-    { nome: "Eva", notas: [3.5, 4.0, 5.0, 4.5] },
+  { nome: "Ana", notas: [8.0, 7.5, 9.0, 6.5] },
+  { nome: "Bruno", notas: [4.0, 5.5, 6.0, 5.0] },
+  { nome: "Carla", notas: [9.5, 9.0, 9.5, 10] },
+  { nome: "Diego", notas: [7.0, 6.5, 7.0, 8.5] },
+  { nome: "Eva", notas: [3.5, 4.0, 5.0, 4.5] },
 ];
 // b) Construa um vetor 'boletim' onde cada item seja:
 //    { nome, b1, b2, b3, b4, media, situacao }
@@ -81,9 +138,7 @@ const turma = [
 
 // → Seu código aqui:
 
-
 console.log("_______________________________");
-
 
 // ------------------------------------------------------------
 // DESAFIO 4 – Cinema com sessões
@@ -106,6 +161,5 @@ console.log("_______________________________");
 // c) Valide TODOS os inputs e nunca quebre o programa.
 
 // → Seu código aqui:
-
 
 console.log("_______________________________");
