@@ -14,7 +14,7 @@
 
 // → Seu código aqui:
 let aluno = {
-    nome6: "Franciny",
+    nome: "Franciny",
     idade: 23,
     curso: "DSAS"
 }
@@ -68,7 +68,7 @@ aluno.notas = {
     nota1: 8,
     nota2:9,
     nota3: 10}
-console.log (aluno.nome6,aluno.notas)
+console.log (aluno.nome,aluno.notas)
 console.log("_______________________________");
 
 

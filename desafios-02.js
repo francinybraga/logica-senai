@@ -3,7 +3,7 @@
 // ============================================================
 // Instruções: resolva cada desafio no espaço indicado.
 // ============================================================
-let lerTeclado = require('readline-sync')
+let lerTeclado = require("readline-sync");
 // ------------------------------------------------------------
 // DESAFIO 1 – Validação de cadastro de usuário
 // ------------------------------------------------------------
@@ -31,37 +31,32 @@ let lerTeclado = require('readline-sync')
 //    Se tudo estiver correto → "Cadastro de <usuario> realizado com sucesso!"
 
 // → Seu código aqui:
-const nome = lerTeclado.question("Digite seu nome completo: ")
-const CPF = lerTeclado.question("Digite seu CPF: ")
-let idade = lerTeclado.questionInt("Digite a idade: ")
-let endereco = {
-    cidade: lerTeclado.question("Digite o nome da cidade: "),
-    estado: lerTeclado.question("Digite o nome da rua: ")
-}
-let acesso = {
-    usuario: lerTeclado.question("Digite o nome de usuário: "),
-    senha: lerTeclado.question("Digite a senha: "),
-    confirmacao: lerTeclado.question("Digite a confirmação da senha")
-}
-const cadastro = {
-    DadosPessoais: {
-        nome,
-        CPF,
-        idade
-    },
-    endereco: {endereco
-    },
-    acesso: {acesso
-    }
-}
-if(!nome.split("") && nome.length > 2){
-    console.log("aceito")
-}
-
-
+// const nome = lerTeclado.question("Digite seu nome completo: ");
+// const CPF = lerTeclado.question("Digite seu CPF: ");
+// let idade = lerTeclado.questionInt("Digite a idade: ");
+// let endereco = {
+//   cidade: lerTeclado.question("Digite o nome da cidade: "),
+//   estado: lerTeclado.question("Digite o nome da rua: "),
+// };
+// let acesso = {
+//   usuario: lerTeclado.question("Digite o nome de usuário: "),
+//   senha: lerTeclado.question("Digite a senha: "),
+//   confirmacao: lerTeclado.question("Digite a confirmação da senha"),
+// };
+// const cadastro = {
+//   DadosPessoais: {
+//     nome,
+//     CPF,
+//     idade,
+//   },
+//   endereco: { endereco },
+//   acesso: { acesso },
+// };
+// if (!nome.split("") && nome.length > 2) {
+//   console.log("aceito");
+// }
 
 console.log("_______________________________");
-
 
 // ------------------------------------------------------------
 // DESAFIO 2 – Sistema de reserva de hotel
@@ -89,10 +84,43 @@ console.log("_______________________________");
 // f) Exiba: "Reserva confirmada para <nome>! Total: R$ <total>"
 
 // → Seu código aqui:
-
+// let reserva = {
+//   hospede: {
+//     nome: null,
+//     ehSocio: false,
+//     temPet: false,
+//   },
+//   quarto: {
+//     numero: 101,
+//     tipo: "standard",
+//     petFriendly: false,
+//     disponivel: true,
+//     precoPorNoite: 250,
+//   },
+// };
+// let usuario = lerTeclado.question("Digite seu nome: ")
+// reserva.hospede.nome = usuario
+// let socio = lerTeclado.keyInYN("É socio do clube fidelidade? ")
+// reserva.hospede.ehSocio = socio
+// let noites = lerTeclado.questionInt("Deseja ficar quantas noites? ")
+// if(!reserva.quarto.disponivel){
+//     console.log(`Quarto indisponivel!`)
+// } else if (reserva.hospede.temPet === true && reserva.quarto.petFriendly === false){
+//     console.log("Quarto não aceita animais. Reserva cancelada.")
+// } else {
+//     let precobase = noites * reserva.quarto.precoPorNoite
+//     if(reserva.hospede.ehSocio == true && noites >= 3){
+//         precobase -= precobase * 0.15
+//     } else if (reserva.hospede.ehSocio == true && noites < 3){
+//         precobase -= precobase * 0.05
+//     } else {
+//         console.log(`Sem desconto.`)
+//     }
+//     console.table(reserva)
+//     console.log(`Reserva confirmada para ${reserva.hospede.nome}! Total: R$ ${precobase}`)
+// }
 
 console.log("_______________________________");
-
 
 // ------------------------------------------------------------
 // DESAFIO 3 – Aprovação escolar com frequência
@@ -123,11 +151,38 @@ console.log("_______________________________");
 // d) Exiba o objeto "aluno" com console.table() ao final.
 
 // → Seu código aqui:
-
-
-console.log("_______________________________");
-
-
+// let nome = null
+// do {
+//     nome = lerTeclado.question("Digite seu nome: ")
+// } while (!/^[A-Za-zÀ-ÿ\s]+$/.test(nome))
+// let notas = {
+//     nota1: lerTeclado.questionFloat("Digite a primeira nota: "),
+//     nota2: lerTeclado.questionFloat("Digite a segunda nota: "),
+//     nota3: lerTeclado.questionFloat("Digite a terceira nota: ")
+// }
+// if(notas.nota1 < 0 || notas.nota1 > 10 || notas.nota2 < 0 || notas.nota2 > 10 ||notas.nota3 < 0 || notas.nota3 > 10){
+//     console.log("Notas invalidas.")
+//     return
+// } else {
+// let percentualFre = null
+// do {
+//     percentualFre = lerTeclado.questionInt("Qual seu percentual de frequencia? (de 0 a 100): ")
+// } while(percentualFre < 0 || percentualFre > 100)
+// let aluno = {}
+// aluno.nome = nome
+// aluno.notas = Object.values(notas)
+// aluno.frequencia = percentualFre
+// let soma = 0
+// for(let i = 0; i < aluno.notas.length; i++){
+//     soma += aluno.notas[i]
+// }
+// let media = soma / aluno.notas.length
+// if(percentualFre < 75) console.log (`Reprovado por falta. Frequência: ${percentualFre}%`)
+// if(percentualFre >= 75 && media >= 7) console.log(`Aprovado! Média: ${Number(media.toFixed(2))} | Frequência: ${percentualFre}%`)
+// else if(percentualFre >= 75 && media >= 5) console.log(`Recuperação. Média: ${Number(media.toFixed(2))} | Frequência: ${percentualFre}%`)
+// else if(percentualFre >= 75 && media < 5) console.log(`Reprovado por nota. Média: ${Number(media.toFixed(2))}`)
+// console.table(aluno)
+// }
 // ------------------------------------------------------------
 // DESAFIO 4 – Simulador de análise de crédito
 // ------------------------------------------------------------
@@ -168,9 +223,7 @@ console.log("_______________________________");
 
 // → Seu código aqui:
 
-
 console.log("_______________________________");
-
 
 // ------------------------------------------------------------
 // DESAFIO 5 – Controle de embarque aéreo
@@ -209,6 +262,5 @@ console.log("_______________________________");
 // g) Exiba o objeto "embarque" com console.table() ao final.
 
 // → Seu código aqui:
-
 
 console.log("_______________________________");
