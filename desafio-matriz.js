@@ -55,7 +55,8 @@ console.log("_______________________________");
 // ------------------------------------------------------------
 // a) Crie um tabuleiro 5x5 (matriz de objetos):
 //    cada célula = { temNavio: false, atingida: false }
-// b) Posicione 5 navios em coordenadas aleatórias utilizando Math.random()
+// b) Posicione 5 navios em coordenadas aleatórias utilizando Mat
+// h.random()
 //    Garanta que não haja repetição de posição.
 // c) Usando while, peça ao usuário tiros (linha e coluna).
 //    - Se acertar:  exiba "Acertou!" (e marque atingida = true).
