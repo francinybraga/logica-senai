@@ -203,26 +203,27 @@ console.log("_______________________________");
 // c) Crie 3 alunos chamando a função e exiba-os com console.table([a1, a2, a3]).
 
 // → Seu código aqui:
-let aluno = {}
-function criarAluno(){
-    return {
-    nome: readline.question('Digite seu nome: '),
-    idade: readline.questionInt('Digite sua idade: '),
-    nota: readline.questionFloat('Digite sua nota: ')  }
-}
-function aprovacao(aluno){
-    if(aluno.nota >= 7){
-        return situacao = 'Aprovado'
-    } else {
-        return situacao = 'Reprovado'
-    }
+// let alunos = []
+// function criarAluno(){
+//     return {
+//     nome: readline.question('Digite seu nome: '),
+//     idade: readline.questionInt('Digite sua idade: '),
+//     nota: readline.questionFloat('Digite sua nota: ')  }
+// }
+// function aprovacao(aluno){
+//     if(aluno.nota >= 7){
+//         return situacao = 'Aprovado'
+//     } else {
+//         return situacao = 'Reprovado'
+//     }
     
-}
-aluno = criarAluno()
-aluno.situacao = aprovacao(aluno)
-criarAluno()
-criarAluno()
-criarAluno()
+// }
+// for(let i = 0; i < 3; i++){
+//     let aluno = criarAluno()
+//     aluno.situacao = aprovacao(aluno)
+//     alunos.push(aluno)
+// }
+// console.table(alunos)
 console.log("_______________________________");
 
 
@@ -237,6 +238,23 @@ console.log("_______________________________");
 // d) Combine: gere pares de 1 a 50 e filtre os maiores que 30.
 
 // → Seu código aqui:
-
-
+// function gerarPares(inicio, fim) {
+//     let pares = []
+//     for(let i = inicio; i <= fim; i++){
+//         if(i % 2 == 0){
+//             pares.push(i)
+//         }
+//     }
+//     return pares
+// }
+// function filtrarMaioresQue(vet, limite) {
+//     let n = []
+//     for(let i = 0; i < vet.length; i++){
+//         if(vet[i] > limite){
+//             n.push(vet[i])
+//         } 
+//     }
+//     return n
+// }
+// console.log(filtrarMaioresQue(gerarPares(1,50), 30))
 console.log("_______________________________");
