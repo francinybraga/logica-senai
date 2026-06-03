@@ -173,22 +173,44 @@ console.log("_______________________________");
 // c) Crie 'maiorDoVetor(vet)' que retorna o maior valor de um vetor.
 // d) Crie 'menorDoVetor(vet)' que retorna o menor valor de um vetor.
 // e) Teste com:
-numeros = [12, 7, 25, 3, 18, 9, 31, 14];
+numeros = [12, 7, 25, 33, 18, 1, 31, 14];
 
 // → Seu código aqui:
-// function somarVetor(vet) {
-//     let soma = 0
-//     for (numero of vet) {
-//         soma += numero
-//     }
-//     return soma
-// }
+function somarVetor(vet) {
+    let soma = 0
+    for (numero of vet) {
+        soma += numero
+    }
+    return soma
+}
 
-// function mediaVetor(vet) {
-//     return somarVetor(vet) / vet.length  
-// }
-// console.log(somarVetor(numeros).toFixed(2))
-// console.log(mediaVetor(numeros).toFixed(2))
+function mediaVetor(vet) {
+    return somarVetor(vet) / numeros.length
+}
+function maiorDoVetor(vet) {
+    let maior = numeros[0]
+    for (let i = 0; i < numeros.length; i++) {
+        if (numeros[i] > maior) {
+            maior = numeros[i]
+        }
+    }
+    return maior
+}
+
+function menorDoVetor(vet){
+    let menor = numeros[0]
+    for (let i = 0; i < numeros.length; i++) {
+        if (numeros[i] < menor) {
+            menor = numeros[i]
+        }
+    }
+    return menor
+}
+console.log(somarVetor(numeros))
+console.log(mediaVetor(numeros).toFixed(2))
+console.log(maiorDoVetor(numeros))
+console.log(menorDoVetor(numeros))
+
 
 console.log("_______________________________");
 
@@ -216,7 +238,7 @@ console.log("_______________________________");
 //     } else {
 //         return situacao = 'Reprovado'
 //     }
-    
+
 // }
 // for(let i = 0; i < 3; i++){
 //     let aluno = criarAluno()
