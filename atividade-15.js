@@ -176,40 +176,40 @@ console.log("_______________________________");
 numeros = [12, 7, 25, 33, 18, 1, 31, 14];
 
 // → Seu código aqui:
-function somarVetor(vet) {
-    let soma = 0
-    for (numero of vet) {
-        soma += numero
-    }
-    return soma
-}
+// function somarVetor(vet) {
+//     let soma = 0
+//     for (numero of vet) {
+//         soma += numero
+//     }
+//     return soma
+// }
 
-function mediaVetor(vet) {
-    return somarVetor(vet) / numeros.length
-}
-function maiorDoVetor(vet) {
-    let maior = numeros[0]
-    for (let i = 0; i < numeros.length; i++) {
-        if (numeros[i] > maior) {
-            maior = numeros[i]
-        }
-    }
-    return maior
-}
+// function mediaVetor(vet) {
+//     return somarVetor(vet) / numeros.length
+// }
+// function maiorDoVetor(vet) {
+//     let maior = numeros[0]
+//     for (let i = 0; i < numeros.length; i++) {
+//         if (numeros[i] > maior) {
+//             maior = numeros[i]
+//         }
+//     }
+//     return maior
+// }
 
-function menorDoVetor(vet){
-    let menor = numeros[0]
-    for (let i = 0; i < numeros.length; i++) {
-        if (numeros[i] < menor) {
-            menor = numeros[i]
-        }
-    }
-    return menor
-}
-console.log(somarVetor(numeros))
-console.log(mediaVetor(numeros).toFixed(2))
-console.log(maiorDoVetor(numeros))
-console.log(menorDoVetor(numeros))
+// function menorDoVetor(vet){
+//     let menor = numeros[0]
+//     for (let i = 0; i < numeros.length; i++) {
+//         if (numeros[i] < menor) {
+//             menor = numeros[i]
+//         }
+//     }
+//     return menor
+// }
+// console.log(somarVetor(numeros))
+// console.log(mediaVetor(numeros).toFixed(2))
+// console.log(maiorDoVetor(numeros))
+// console.log(menorDoVetor(numeros))
 
 
 console.log("_______________________________");
@@ -225,27 +225,27 @@ console.log("_______________________________");
 // c) Crie 3 alunos chamando a função e exiba-os com console.table([a1, a2, a3]).
 
 // → Seu código aqui:
-// let alunos = []
-// function criarAluno(){
-//     return {
-//     nome: readline.question('Digite seu nome: '),
-//     idade: readline.questionInt('Digite sua idade: '),
-//     nota: readline.questionFloat('Digite sua nota: ')  }
-// }
-// function aprovacao(aluno){
-//     if(aluno.nota >= 7){
-//         return situacao = 'Aprovado'
-//     } else {
-//         return situacao = 'Reprovado'
-//     }
+let alunos = []
+function criarAluno(nome, idade, nota){
+    return {
+    nome: readline.question('Digite seu nome: '),
+    idade: readline.questionInt('Digite sua idade: '),
+    nota: readline.questionFloat('Digite sua nota: ')  }
+}
+function aprovacao(aluno){
+    if(aluno.nota >= 7){
+        return situacao = 'Aprovado'
+    } else {
+        return situacao = 'Reprovado'
+    }
 
-// }
-// for(let i = 0; i < 3; i++){
-//     let aluno = criarAluno()
-//     aluno.situacao = aprovacao(aluno)
-//     alunos.push(aluno)
-// }
-// console.table(alunos)
+}
+for(let i = 0; i < 3; i++){
+    let aluno = criarAluno()
+    aluno.situacao = aprovacao(aluno)
+    alunos.push(aluno)
+}
+console.table(alunos)
 console.log("_______________________________");
 
 
