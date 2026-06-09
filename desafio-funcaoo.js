@@ -62,30 +62,25 @@
 // }
 let readline = require('readline-sync')
 function temTamanhoMinimo(senha, min) { 
-    console.log('temTamanhoMinimo ', senha.length >= min)
-    if (senha.length >= min) return true
+    if (senha >= min) return true
     return false
 }
 function temNumero(senha) {
-    console.log('senha ', /\d/.test(senha))
     return /\d/.test(senha);
 }
 function temMaiuscula(senha) {
     
     for (let letra of senha) {
         if (letra >= 'A' && letra <= 'Z') {
-            console.log('temMaiusculas ',letra >= 'A' && letra <= 'Z' );
             return true;
         }
     }
     return false;
 }
 function temEspecial(senha) {
-    console.log('temEspecial', /[!@#$%&*?]/.test(senha));
-    
     return /[!@#$%&*?]/.test(senha);
 }
-function valida(){
+function valida(senha){
     if(temTamanhoMinimo(senha,8) && temNumero(senha) && temMaiuscula(senha) && temEspecial(senha)) return true
     return false
 }
@@ -97,22 +92,26 @@ function motivos(){
     if(!temMaiuscula(senha)) motivos += 'Não tem maiúscula. '
     if (!temEspecial(senha)) motivos += 'Não tem especial. '
     
-    if(motivos != '') return motivos
+    return motivos
     
 }
-// function validarSenha(senha) {
-//     let motivos = {
-//         valida: valida(),
-//         motivo: motivos()
-//     }
-// }
-let senha = readline.question('Digite uma senha (com números, letra maiuscula, caracteres especial): ')
-if(senha === valida()){
-    console.log('Senha criada')
-} else {
-    console.log('Senha inválida.')
-    console.log(motivos()) 
+function validarSenha(senha) {
+    let motivos = {
+        valida: valida(),
+        motivo: motivos()
+    }
 }
+let senha = readline.question(
+    'Digite uma senha (com números, letra maiúscula, caracteres especial): '
+);
+
+if (valida(senha)) {
+    console.log('Senha criada');
+} else {
+    console.log('Senha inválida.');
+    console.log(motivos(senha));
+}
+validarSenha(senha)
 console.log("_______________________________");
 
 
