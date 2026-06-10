@@ -20,98 +20,59 @@
 // f) Pergunte uma senha ao usuário e exiba o resultado da validação.
 
 // → Seu código aqui:
-// let readline = require('readline-sync')
-// function temTamanhoMinimo(senha, min) {
-//     if (senha.length >= min) return true
-//     return false
+let readline = require('readline-sync')
+// function temTamanhoMinimo(senha, min) { 
+//     return senha.length >= min  
+
 // }
 // function temNumero(senha) {
-//     if (senha.includes("1", "2", "3", "4", "5", "6", "7", "8", "9", "0")) return true
-//     return false
+//     return /\d/.test(senha);
 // }
 // function temMaiuscula(senha) {
-//     if (senha >= "A" && senha <= "Z") return true
-//     return false
+
+//     for (let letra of senha) {
+//         if (letra >= 'A' && letra <= 'Z') {
+//             return true;
+//         }
+//     }
+//     return false;
 // }
 // function temEspecial(senha) {
-//     if(senha.includes("!","@","#","$","%","&","*","?")) return true
-//     return false
+//     return /[!@#$%&*?]/.test(senha);
 // }
-// function valida(){
+// function valida(senha){
 //     if(temTamanhoMinimo(senha,8) && temNumero(senha) && temMaiuscula(senha) && temEspecial(senha)) return true
 //     return false
 // }
-// function motivos(){
-//     if(temTamanhoMinimo()) return 'Tamanho minimo não atingido.'
-//     else if(temNumero()) return 'Não tem número.'
-//     else if(temMaiuscula()) return 'Não tem maiúscula.'
-//     else if (temEspecial()) return 'Não tem especial.'    
+// function bterMotivos(senha){
+//     let motivo = ''
+
+//     if(!temTamanhoMinimo(senha,8)) motivo += 'Tamanho minimo não atingido. '
+//     if(!temNumero(senha)) motivo += 'Não tem número. '
+//     if(!temMaiuscula(senha)) motivo += 'Não tem maiúscula. '
+//     if (!temEspecial(senha)) motivo += 'Não tem especial. '
+
+//     return motivo
+
 // }
 // function validarSenha(senha) {
-//     let motivos = {
-//         valida: valida(),
-//         motivo: motivos()
+//      return {
+//         valida: valida(senha),
+//         motivo: bterMotivos(senha)
 //     }
+
 // }
-// let senha = readline.question('Digite uma senha (com números, letra maiuscula, caracteres especial): ')
-// if(senha === valida()){
-//     console.log('Senha criada')
+// let senha = readline.question(
+//     'Digite uma senha (com números, letra maiúscula, caracteres especial): '
+// );
+
+// if (valida(senha)) {
+//     console.log('Senha criada');
 // } else {
-//     console.log('Senha inválida.')
-//     motivos()
+//     console.log('Senha inválida.');
+//     console.log(bterMotivos(senha));
 // }
-let readline = require('readline-sync')
-function temTamanhoMinimo(senha, min) { 
-    if (senha >= min) return true
-    return false
-}
-function temNumero(senha) {
-    return /\d/.test(senha);
-}
-function temMaiuscula(senha) {
-    
-    for (let letra of senha) {
-        if (letra >= 'A' && letra <= 'Z') {
-            return true;
-        }
-    }
-    return false;
-}
-function temEspecial(senha) {
-    return /[!@#$%&*?]/.test(senha);
-}
-function valida(senha){
-    if(temTamanhoMinimo(senha,8) && temNumero(senha) && temMaiuscula(senha) && temEspecial(senha)) return true
-    return false
-}
-function motivos(){
-    let motivos = ''
-
-    if(!temTamanhoMinimo(senha,8)) motivos += 'Tamanho minimo não atingido. '
-    if(!temNumero(senha)) motivos += 'Não tem número. '
-    if(!temMaiuscula(senha)) motivos += 'Não tem maiúscula. '
-    if (!temEspecial(senha)) motivos += 'Não tem especial. '
-    
-    return motivos
-    
-}
-function validarSenha(senha) {
-    let motivos = {
-        valida: valida(),
-        motivo: motivos()
-    }
-}
-let senha = readline.question(
-    'Digite uma senha (com números, letra maiúscula, caracteres especial): '
-);
-
-if (valida(senha)) {
-    console.log('Senha criada');
-} else {
-    console.log('Senha inválida.');
-    console.log(motivos(senha));
-}
-validarSenha(senha)
+// validarSenha(senha)
 console.log("_______________________________");
 
 
@@ -126,14 +87,105 @@ console.log("_______________________________");
 // d) 'milhasParaKm(mi)'          → mi / 0.621371
 // e) 'kgParaLibras(kg)'          → kg * 2.20462
 // f) 'librasParaKg(lb)'          → lb / 2.20462
-//
 // g) Crie 'converter(valor, dePara)' que recebe a unidade de origem
 //    e a unidade de destino e RETORNA o valor convertido, chamando a função correta.
-//
 // h) Faça um menu (do...while) onde o usuário digita o valor, e a unidade para qual deseja converter
 //    e mostre o resultado formatado com toFixed(2).
 
 // → Seu código aqui:
+// function celsiusParaFahrenheit(c) {
+//     return c * 1.8 + 32
+// }
+
+// function fahrenheitParaCelsius(f) {
+//     return (f - 32) / 1.8
+// }
+
+// function kmParaMilhas(km) {
+//     return km * 0.621371
+// }
+
+// function milhasParaKm(mi) {
+//     return mi / 0.621371
+// }
+
+// function kgParaLibras(kg) {
+//     return kg * 2.20462
+// }
+
+// function librasParaKg(lb) {
+//     return lb / 2.20462
+// }
+
+// function converter(valor, dePara) {
+//     if (dePara === celsiusParaFahrenheit) {
+//         return celsiusParaFahrenheit(valor)
+//     }
+//     if (dePara === fahrenheitParaCelsius) {
+//         return fahrenheitParaCelsius(valor)
+//     }
+//     if (dePara === kmParaMilhas) {
+//         return kmParaMilhas(valor)
+//     }
+//     if (dePara === milhasParaKm) {
+//         return milhasParaKm(valor)
+//     }
+//     if (dePara === kgParaLibras) {
+//         return kgParaLibras(valor)
+//     }
+//     if (dePara === librasParaKg) {
+//         return librasParaKg(valor)
+//     }
+// }
+// function menu() {
+//     console.log(`
+//     1) Celsus para Fahrenheit
+//     2) Fahrenheit para Celsus
+//     3) KM para Milhas
+//     4) Milhas para KM
+//     5) KG para Libra
+//     6) Libra para Kg
+//     0) Sair
+//     `)
+// }
+// let opcao = null
+// do {
+//     menu()
+//     opcao = readline.questionInt('Digite a opcao: ')
+//     let valorConverter = readline.questionFloat('Digite o valor para converter: ')
+//     if (opcao > 7 && opcao < 0) {
+//         console.log('Digite um opcao valida. ')
+//     } else {
+//         switch (opcao) {
+//             case 1:
+//                 console.log(`${valorConverter} Celsius para Fahrenheit = ${converter(valorConverter, celsiusParaFahrenheit).toFixed(2)} Fahrenheit`)
+//                 break
+//             case 2:
+//                 console.log(Number(converter(valorConverter, fahrenheitParaCelsius).toFixed(2)))
+//                 break
+//             case 3:
+//                 console.log(converter(valorConverter, kmParaMilhas).toFixed(2))
+//                 break
+//             case 4:
+//                 console.log(converter(valorConverter, milhasParaKm).toFixed(2))
+//                 break
+//             case 5:
+//                 console.log(converter(valorConverter, kgParaLibras).toFixed(2))
+//                 break
+//             case 6:
+//                 console.log(converter(valorConverter, librasParaKg).toFixed(2))
+//                 break
+//             default:
+//                 console.log('Digite uma opcao valida.')
+//                 break
+//         }
+//     }
+// } while (opcao != 0)
+
+
+
+
+
 
 
 console.log("_______________________________");
@@ -153,7 +205,77 @@ console.log("_______________________________");
 // f) Crie a função 'iniciarQuiz' para iniciar o quiz.
 
 // → Seu código aqui:
+let question = [
+    {
+        resposta: readline.questionInt('Em que ano foi realizado a primeria Copa do Mundo? '),
+        acertou: false ? 'Parabén, acertou' : 'errou'
+    },
+    {
+        resposta: readline.question('Qual pais venceu mais Copas do Mundo ate hoje? ').toLowerCase(),
+        acertou: false ? 'Parabén, acertou' : 'errou'
+    },
+    {
+        resposta: readline.question('Em que pais aconteceu a Copa de 2014? ').toLowerCase(),
+        acertou: false ? 'Parabén, acertou' : 'errou'
+    },
+    {
+        resposta: readline.question('Qual o maior artilheiro da Copa do Mundo em 2002? ').toLowerCase(),
+        acertou: false ? 'Parabén, acertou' : 'errou'
+    },
+    {
+        resposta: readline.question('Qual selecao venceu a Copa do Mundo em 2022? ').toLowerCase(),
+        acertou: false ? 'Parabén, acertou' : 'errou'
+    }
+]
 
+function exibirPergunta() {
+    console.log(`
+=================================================
+        PERGUNTAS SOBRE A COPA DO MUNDO     
+=================================================
+1) Em que ano foi realizado a primeria Copa do Mundo?
+2) Qual pais venceu mais Copas do Mundo ate hoje?
+3) Em que pais aconteceu a Copa de 2014?
+4) Qual o maior artilheiro da Copa do Mundo em 2002?
+5) Qual selecao venceu a Copa do Mundo em 2022?
+    `)
+}
+function verificarResposta() {
+    if (question[0].resposta === 1930) question[0].acertou = true ? 'acertou' : 'errou' 
+    if (question[1].resposta === 'brasil') question[1].acertou = true ? 'acertou' : 'errou'
+    if (question[2].resposta === 'brasil') question[2].acertou = true ? 'acertou' : 'errou'
+    if (question[3].resposta === 'ronaldo') question[3].acertou = true ? 'acertou' : 'errou'
+    if (question[4].resposta === 'argentina') question[4].acertou = true ? 'acertou' : 'errou'
+
+}
+function iniciarQuiz() {
+    for (let i = 1; i < question.length; i++) {
+        console.log(`Pergunta numero ${i}: ${question[i].resposta}`)
+    }
+}
+function mostrarResultado() {
+    console.log(`
+${question[0].resposta}
+${question[0].acertou}
+
+${question[1].resposta}
+${question[1].acertou}
+
+${question[2].resposta}
+${question[2].acertou}
+
+${question[3].resposta}
+${question[3].acertou}
+
+${question[4].resposta}
+${question[4].acertou}
+
+`)
+}
+exibirPergunta()
+iniciarQuiz()
+verificarResposta()
+mostrarResultado()
 
 console.log("_______________________________");
 
@@ -178,7 +300,10 @@ console.log("_______________________________");
 // d) Após cada operação, exiba a lista atualizada com console.table().
 
 // → Seu código aqui:
-
+let funcionário = []
+function criarFuncionario(lista, nome, cargo, salario) {
+    
+}
 
 console.log("_______________________________");
 

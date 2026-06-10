@@ -260,23 +260,23 @@ console.log("_______________________________");
 // d) Combine: gere pares de 1 a 50 e filtre os maiores que 30.
 
 // → Seu código aqui:
-// function gerarPares(inicio, fim) {
-//     let pares = []
-//     for(let i = inicio; i <= fim; i++){
-//         if(i % 2 == 0){
-//             pares.push(i)
-//         }
-//     }
-//     return pares
-// }
-// function filtrarMaioresQue(vet, limite) {
-//     let n = []
-//     for(let i = 0; i < vet.length; i++){
-//         if(vet[i] > limite){
-//             n.push(vet[i])
-//         } 
-//     }
-//     return n
-// }
-// console.log(filtrarMaioresQue(gerarPares(1,50), 30))
+function gerarPares(inicio, fim) {
+    let pares = []
+    for(let i = inicio; i <= fim; i++){
+        if(i % 2 == 0){
+            pares.push(i)
+        }
+    }
+    return pares
+}
+function filtrarMaioresQue(vet, limite) {
+    let n = []
+    for(let i = 0; i < vet.length; i++){
+        if(vet[i] > limite){
+            n.push(vet[i])
+        } 
+    }
+    return n
+}
+console.log(filtrarMaioresQue(gerarPares(1,50), 30))
 console.log("_______________________________");
