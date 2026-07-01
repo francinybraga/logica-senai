@@ -13,6 +13,8 @@
 // c) Não precisa verificar vencedor — apenas alternar X e O.
 
 // → Seu código aqui:
+const { IncomingMessage } = require("http");
+const readline = require("readline");
 let lerTeclado = require("readline-sync");
 // let jogador = "X";
 // let tabuleiro = [
@@ -68,53 +70,62 @@ console.log("_______________________________");
 // f) Exiba o número total de tiros usados.
 
 // → Seu código aqui:
-let tabuleiro = [
-  { temNavio: false, atingida: false },
-  { temNavio: false, atingida: false },
-  { temNavio: false, atingida: false },
-  { temNavio: false, atingida: false },
-  { temNavio: false, atingida: false },
-  { temNavio: false, atingida: false },
-  { temNavio: false, atingida: false },
-  { temNavio: false, atingida: false },
-  { temNavio: false, atingida: false },
-  { temNavio: false, atingida: false },
-  { temNavio: false, atingida: false },
-  { temNavio: false, atingida: false },
-  { temNavio: false, atingida: false },
-  { temNavio: false, atingida: false },
-  { temNavio: false, atingida: false },
-  { temNavio: false, atingida: false },
-  { temNavio: false, atingida: false },
-  { temNavio: false, atingida: false },
-  { temNavio: false, atingida: false },
-  { temNavio: false, atingida: false },
-  { temNavio: false, atingida: false },
-  { temNavio: false, atingida: false },
-  { temNavio: false, atingida: false },
-  { temNavio: false, atingida: false },
-  { temNavio: false, atingida: false },
-];
-let navios = 0;
-while (navios < 5) {
-  let linha = Math.floor(Math.random() * 5);
-  let coluna = Math.floor(Math.random() * 5);
-  if (tabuleiro[linha][coluna].temNavio === false) {
-    tabuleiro[linha][coluna] = true;
-    navios++;
-  }
-}
-let acertou = false;
-while (!acertou) {
-  let linha = lerTeclado.questionInt("Digite o numero da linha:");
-  let coluna = lerTeclado.questionInt("Digite o numero da coluna:");
-  if (tabuleiro[linha][coluna].temNavio === false) {
-    console.log("Água...");
-  } else {
-    console.log("Acertou!");
-  }
-}
-console.log("_______________________________");
+// let tabuleiro = [];
+// for (let i = 0; i < 5; i++) {
+//   let linha = [];
+//   for (let j = 0; j < 5; j++) {
+//     linha.push({ temNavio: false, atingida: false });
+//   }
+//   tabuleiro.push(linha);
+// }
+// for (let k = 0; k < 5; k++) {
+//   let linha = Math.floor(Math.random() * 5);
+//   let coluna = Math.floor(Math.random() * 5);
+//   if (tabuleiro[linha][coluna].temNavio == true) {
+//     k--;
+//   } else {
+//     tabuleiro[linha][coluna].temNavio = true;
+//   }
+// }
+// let acertou = 0;
+// let totalNavios = 5;
+// let tentativa = 0
+// do {
+//   let linha = lerTeclado.questionInt("Digite a linha: ");
+//   if (linha > 4 || linha < 0) {
+//     console.log("tente outra posição");
+//   } else {
+//     let coluna = lerTeclado.questionInt("Digite a coluna: ");
+//     if (coluna > 4 || coluna < 0) {
+//       console.log("tente outra posicao");
+//     } else {
+//       let celula = tabuleiro[linha][coluna];
+//       if (celula.atingida == false) {
+//         celula.atingida = true;
+//         if (celula.temNavio) {
+//           console.log("Acertou!");
+//           acertou++;
+//           tentativa++
+//           console.log(`
+// Total de acertos: ${acertou}
+// Total de tentativas: ${tentativa}
+//             `)
+//         } else {
+//           console.log("Àgua...");
+//           tentativa++
+//           console.log(`
+// Total de tentativas: ${tentativa}`
+//           )
+//         }
+//         console.table(tabuleiro);
+//       } else {
+//         console.log("tente outra posicao");
+//       }
+//     }
+//   }
+// } while (acertou < totalNavios);
+// console.log(`Parabéns, voce acertou em ${tentativa} tentativas.`)
+// console.log("_______________________________");
 
 // ------------------------------------------------------------
 // DESAFIO 3 – Boletim escolar com console.table
@@ -138,7 +149,54 @@ const turma = [
 //    - Quantidade de aprovados, recuperação e reprovados.
 
 // → Seu código aqui:
+// let boletim = [];
+// for (let i = 0; i < turma.length; i++) {
+//   boletim.push = {
+//     nome: turma[i].nome,
+//     b1: turma[i].notas[0],
+//     b2: turma[i].notas[1],
+//     b3: turma[i].notas[2],
+//     b4: turma[i].notas[3],
+//     media: null,
+//     situação: null,
+//   };
+//   console.log(boletim);
+// }
+// let maior = Infinity;
+// let menor = Infinity;
+// let alunoMaior = null;
+// let alunoMenor = null;
+// for (aluno of turma) {
+//   let soma = 0;
+//   for (nota of aluno.notas) {
+//     soma += Number(nota);
+//   }
+//   let media = soma / aluno.notas.length;
+//   aluno.media = media;
 
+//   if (alunoMaior === null || media > alunoMaior.media) {
+//     alunoMaior = aluno;
+//   }
+
+//   if (alunoMenor === null || media < alunoMenor.media) {
+//     alunoMenor = aluno;
+//   }
+//   if (media > maior) {
+//     maior = media;
+//   }
+//   if (media < menor) {
+//     menor = media;
+//   }
+//   if (media >= 7) {
+//     boletim.situação = "Aprovado";
+//   } else if (media >= 5) {
+//     boletim.situação = "Recuperação";
+//   } else {
+//     boletim.situação = "Reprovado";
+//   }
+// }
+// console.log("Maior média:", alunoMaior.nome, alunoMaior.media);
+// console.log("Menor média:", alunoMenor.nome, alunoMenor.media);
 console.log("_______________________________");
 
 // ------------------------------------------------------------
@@ -148,11 +206,11 @@ console.log("_______________________________");
 // cada uma com sua matriz própria de poltronas (4 fileiras x 6 poltronas).
 //
 // a) Crie uma estrutura:
-//    sessoes = [
-//      { filme: "Ação X",   sala: matriz4x6 com "L" },
-//      { filme: "Drama Y",  sala: matriz4x6 com "L" },
-//      { filme: "Comédia Z", sala: matriz4x6 com "L" },
-//    ]
+//  sessoes = [
+//    { filme: "Ação X",   sala: matriz4x6 com "L" },
+//    { filme: "Drama Y",  sala: matriz4x6 com "L" },
+//    { filme: "Comédia Z", sala: matriz4x6 com "L" },
+//  ]
 // b) Usando do...while, exiba o menu:
 //    1 – Listar sessões e ocupação (% ocupada de cada uma)
 //    2 – Mostrar mapa de uma sessão (peça o índice 0..2)
@@ -162,5 +220,115 @@ console.log("_______________________________");
 // c) Valide TODOS os inputs e nunca quebre o programa.
 
 // → Seu código aqui:
+function criarSala() {
+  let matriz = [];
+  for (let i = 0; i < 4; i++) {
+    let linha = [];
+    for (let j = 0; j < 6; j++) {
+      linha.push("L");
+    }
+    matriz.push(linha);
+  }
+  return matriz;
+}
+let sessoes = [
+  { filme: "Ação X", sala: criarSala() },
+  { filme: "Drama Y", sala: criarSala() },
+  { filme: "Comédia Z", sala: criarSala() },
+];
+function menu() {
+  console.log(`
+   1 – Listar sessões e ocupação (% ocupada de cada uma)
+   2 – Mostrar mapa de uma sessão (peça o índice 0..2)
+   3 – Reservar poltrona (peça sessão, fileira e poltrona)
+   4 – Cancelar reserva  (peça sessão, fileira e poltrona)
+   0 – Sair`);
+}
+function listarSessao() {
+  for (let i = 0; i < sessoes.length; i++) {
+    console.log(`        NOME DA SESÃO: ${sessoes[i].filme}`);
+    console.table(sessoes[i].sala);
+  }
+}
+function mostrarSessao(indice) {
+  if (!sessoes[indice]) {
+    console.log(`
+==================================
+      Sessão inexistente.
+==================================`);
+  } else {
+    console.log(`        NOME DA SESÃO: ${sessoes[indice].filme}`);
+    console.table(sessoes[indice].sala);
+  }
+}
+function pedirSessao() {
+  let pedir = lerTeclado.questionInt("qual sesso deseja ver? ");
+  mostrarSessao(pedir - 1);
+}
+function comprarPoltrona(indice) {
+    console.log(indice);
+    console.log(sessoes[indice]);
+    if (!sessoes[indice]) {
+    console.log("Sessão inválida.");
+    return;
+  }
+    if (indice < 0 || indice >= sessoes.length) {
+    console.log("Sessão inválida.");
+    return;
+  }
+  let linha = lerTeclado.questionInt("Escolha a linha: ");
+  if (linha < 0 || linha >= sessoes[indice].sala.length) {
+    console.log("Posicao invalida.");
+    return;
+  } else {
+    let coluna = lerTeclado.questionInt("Escolha a coluna: ");
+    if (coluna < 0 || coluna >= sessoes[indice].sala[0].length) {
+      console.log("Posicao invalida.");
+      return;
+    } else {
+      if (sessoes[indice].sala[linha][coluna] === "X") {
+        console.log("Poltrona ocupada.");
+      } else {
+        sessoes[indice].sala[linha][coluna] = "X";
+        console.log('Compra realizada com sucesso.')
+      }
+    }
+  }
+}
+let opcao = null;
+do {
+  menu();
+  opcao = lerTeclado.questionInt("Digite uma opcao: ");
+  if (opcao > 0 && opcao < 5) {
+    switch (opcao) {
+      case 1:
+        listarSessao();
+        break;
+      case 2:
+        let escolha = lerTeclado.questionInt(
+          "Digite o numero da sessão que deseja ver:(1 a 3) ",
+        );
+        if (escolha > 0 || escolha < 4) {
+          mostrarSessao(escolha - 1);
+        } else {
+          console.log("Escolha uma opcao valida.");
+        }
+        break;
+      case 3:
+          let sessao = lerTeclado.questionInt(
+    "Escolha a sessão (1 a 3): "
+        );
+        comprarPoltrona(sessoes - 1);
+        break;
+      case 4:
+        break;
+      default:
+        console.log("Escolha uma opcao valida.");
+    }
+  } else {
+    console.log("Escolha uma opcao valida.");
+  }
+} while (opcao != 0);
+console.table(matriz);
 
 console.log("_______________________________");

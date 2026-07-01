@@ -1,9 +1,9 @@
-let readline = require('readline-sync')
+let readline = require("readline-sync");
 
-let listaDeTarefas = []
+let listaDeTarefas = [];
 
 function menu() {
-    console.log(`
+  console.log(`
     ================
     LISTA DE TAREFAS
     ================
@@ -15,80 +15,127 @@ function menu() {
     6) Filtrar
     7) Encerrar
     0) Sair
-    `)
+    `);
 }
-let adicionar = true
-let titulo = null
-let descricao = null
+let adicionar = true;
+let titulo = null;
+let descricao = null;
 function adicionarItemLista() {
-    while (adicionar) {
-        titulo = readline.question('Digite o nome do titulo: ')
-        .toLowerCase()
-        .trim()
-        descricao = readline.question('Escreva a descrição da tarefa: ')
-        .toLowerCase()
-        .trim()
-        listaDeTarefas.push({ titulo, descricao })
-        adicionar = readline.keyInYN('Deseja adicionar outro item?')
-    }
+  while (adicionar) {
+    titulo = readline
+      .question("Digite o nome do titulo: ")
+      .toLowerCase()
+      .trim();
+    descricao = readline
+      .question("Escreva a descrição da tarefa: ")
+      .toLowerCase()
+      .trim();
+    listaDeTarefas.push({ titulo, descricao });
+    adicionar = readline.keyInYN("Deseja adicionar outro item?");
+  }
 }
 
-adicionarItemLista()
-
-function vizualizarLista() {
-    console.table(listaDeTarefas)
+// adicionarItemLista()
+function vizualizarLista1() {
+  for (let i = 0; i < listaDeTarefas.length; i++) {
+    console.log(`
+            ${i + 1}) ${listaDeTarefas[i].titulo}
+            Descrição: ${listaDeTarefas[i].descricao}
+            `);
+  }
 }
 
-vizualizarLista()
+// vizualizarLista()
 
 function vizualizarItem() {
-    vizualizarLista()
-    let vizualizar = readline.questionInt('Qual item da lista deseja vizualizar?')
-    console.log(listaDeTarefas[vizualizar])
+  vizualizarLista1();
+  let vizualizar = readline.questionInt(
+    "Qual item da lista deseja vizualizar?",
+  );
+  console.log(listaDeTarefas[vizualizar]);
 }
 
-vizualizarItem()
+// vizualizarItem()
 
 function editarTituloTarefa() {
-    vizualizarLista()
-    let editar = readline.questionInt('Qual titulo da lista deseja editar?')
-    let novoNome = readline.question('Escreva o novo titulo: ')
-    listaDeTarefas[editar].titulo = novoNome
+  vizualizarLista1();
+  let editar = readline.questionInt("Qual titulo da lista deseja editar?");
+  let novoNome = readline.question("Escreva o novo titulo: ");
+  listaDeTarefas[editar].titulo = novoNome;
 }
 
-editarTituloTarefa()
+// editarTituloTarefa()
 
 function editarDescricaoTarefa() {
-    vizualizarLista()
-    let editar = readline.questionInt('Qual titulo da lista deseja editar?')
-    let novoNome = readline.question('Escreva a nova descricao: ')
-    listaDeTarefas[editar].descricao = novoNome
+  vizualizarLista1();
+  let editar = readline.questionInt("Qual titulo da lista deseja editar?");
+  let novoNome = readline.question("Escreva a nova descricao: ");
+  listaDeTarefas[editar].descricao = novoNome;
 }
 
-editarDescricaoTarefa()
+// editarDescricaoTarefa()
 
 function deletar() {
-    vizualizarLista()
-    let deleta = readline.questionInt('Qual item deseja deletar? ')
-    listaDeTarefas.splice(deleta, 1)
-    console.table(listaDeTarefas)
+  vizualizarLista1();
+  let deleta = readline.questionInt("Qual item deseja deletar? ");
+  listaDeTarefas.splice(deleta, 1);
+  console.table(listaDeTarefas);
 }
-deletar()
+// deletar()
 
 function filtraItemLista() {
-    let filtro = readline.question('Digite o filto das tarefas: ')
-        .toLowerCase()
-        .trim()
-        let encontrado = [null]
+  let filtro = readline
+    .question("Digite o filto de pesquisa: ")
+    .toLowerCase()
+    .trim();
+  let encontrado = [null];
 
-    for (let i = 0; i < listaDeTarefas.length; i++) {
-        if (listaDeTarefas[i].titulo.includes(filtro)) encontrado.push(listaDeTarefas[i].titulo)
-    }
-    if(encontrado === 0){
-        console.log('parametro não encontrado')
-    }
-    console.log(encontrado)
+  for (let i = 0; i < listaDeTarefas.length; i++) {
+    if (listaDeTarefas[i].titulo.includes(filtro))
+      encontrado.push(listaDeTarefas[i].titulo);
+  }
+  if (encontrado === 0) {
+    console.log("parametro não encontrado");
+  }
+  console.log(encontrado);
 }
 
-filtraItemLista()
-console.log(listaDeTarefas)
+// filtraItemLista()
+// console.log(listaDeTarefas);
+let opcao = null;
+do {
+  menu();
+  opcao = readline.questionInt("Digite a opcao que deseja executar: ");
+  switch (opcao) {
+    case 1:
+      adicionarItemLista();
+      break;
+    case 2:
+      vizualizarLista1();
+      break;
+    case 3:
+      vizualizarItem();
+      break;
+    case 4:
+      let escolha = readline
+        .question("Deseja editar o título da tarefa ou a descrição?")
+        .toLowerCase()
+        .trim();
+      if (escolha == "tarefa") editarTituloTarefa();
+      else if (escolha == "descricao") editarDescricaoTarefa();
+      else console.log("Digite uma opcao valida!");
+      break;
+    case 5:
+        deletar()
+      break;
+    case 6:
+        filtraItemLista()
+      break;
+    case 7:
+        console.log("Saindo...");
+      break;
+    default:
+      console.log("Digite um opcao valida!");
+      menu();
+  }
+} while (opcao != 7);
