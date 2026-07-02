@@ -20,18 +20,43 @@ function menu() {
 let adicionar = true;
 let titulo = null;
 let descricao = null;
+
+// function validacao(dados) {
+//   if (/^(?=.*[\p{L}]{2,})[\p{L}0-9\s.,'$-]+$/u.test(dados)) {
+//     console.log('Titulo cadastrado com sucesso.')
+//   } else {
+//     return false
+//   }
+//   if (dados === '' || dados == " ") {
+//     console.log('Descricao invalida.')
+
+//   } else {
+//     return false
+//   }
+// }
 function adicionarItemLista() {
   while (adicionar) {
     titulo = readline
       .question("Digite o nome do titulo: ")
       .toLowerCase()
       .trim();
-    descricao = readline
-      .question("Escreva a descrição da tarefa: ")
-      .toLowerCase()
-      .trim();
-    listaDeTarefas.push({ titulo, descricao });
-    adicionar = readline.keyInYN("Deseja adicionar outro item?");
+    if (/^(?=.*[\p{L}]{2,})[\p{L}0-9\s.,'$-]+$/u.test(titulo)) {
+      console.log('Titulo cadastrado com sucesso.')
+      descricao = readline
+        .question("Escreva a descricao da tarefa: ")
+        .toLowerCase()
+        .trim();
+      if (!descricao === '' || !descricao == " " && descricao.length > 1) {
+        console.log('descricao cadastrada com sucesso.')
+        listaDeTarefas.push({ titulo, descricao });
+        adicionar = readline.keyInYN("Deseja adicionar outro item?");
+      } else {
+        console.log('descricao com erro')
+      }
+    } else {
+      console.log('titulo com erro')
+
+    }
   }
 }
 
@@ -39,8 +64,7 @@ function adicionarItemLista() {
 function vizualizarLista1() {
   for (let i = 0; i < listaDeTarefas.length; i++) {
     console.log(`
-            ${i + 1}) ${listaDeTarefas[i].titulo}
-            Descrição: ${listaDeTarefas[i].descricao}
+${i + 1}) ${listaDeTarefas[i].titulo}
             `);
   }
 }
@@ -48,9 +72,8 @@ function vizualizarLista1() {
 // vizualizarLista()
 
 function vizualizarItem() {
-  vizualizarLista1();
   let vizualizar = readline.questionInt(
-    "Qual item da lista deseja vizualizar?",
+    `Qual item da lista deseja vizualizar? Temos ${listaDeTarefas.length} tarefas`,
   );
   console.log(listaDeTarefas[vizualizar]);
 }
@@ -118,21 +141,21 @@ do {
       break;
     case 4:
       let escolha = readline
-        .question("Deseja editar o título da tarefa ou a descrição?")
+        .question("Deseja editar o titulo da tarefa ou a descricao?")
         .toLowerCase()
         .trim();
       if (escolha == "tarefa") editarTituloTarefa();
-      else if (escolha == "descricao") editarDescricaoTarefa();
+      else if (escolha == "descricao" || escolha == 'descrição') editarDescricaoTarefa();
       else console.log("Digite uma opcao valida!");
       break;
     case 5:
-        deletar()
+      deletar()
       break;
     case 6:
-        filtraItemLista()
+      filtraItemLista()
       break;
     case 7:
-        console.log("Saindo...");
+      console.log("Saindo...");
       break;
     default:
       console.log("Digite um opcao valida!");
